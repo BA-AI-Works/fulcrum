@@ -85,8 +85,8 @@ export default function Journey() {
               >
                 <CardContent className="p-6">
                   <div className="text-center mb-4">
-                    <div className={`w-12 h-12 ${step.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                      <span className="text-white font-bold">{step.id}</span>
+                    <div className={`w-8 h-8 ${step.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <span className="text-white font-bold text-sm">{step.id}</span>
                     </div>
                     <h3 className="text-lg font-bold fulcrum-text">{step.title}</h3>
                   </div>

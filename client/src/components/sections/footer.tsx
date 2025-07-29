@@ -1,5 +1,5 @@
 import { MapPin, Linkedin } from "lucide-react";
-import FulcrumLogo from "@/components/fulcrum-logo";
+import fulcrumWhiteLogoPath from "@assets/Fulcrum-white-logo_1753806212707.png";
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {
@@ -25,11 +25,20 @@ export default function Footer() {
           {/* Logo and Description */}
           <div>
             <div className="mb-6">
-              <FulcrumLogo />
+              <img src={fulcrumWhiteLogoPath} alt="Fulcrum" className="h-12" />
             </div>
-            <p className="text-gray-400 leading-relaxed">
-              AI-powered organizational transformation consulting for enterprise excellence.
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Fulcrum empowers AI-Powered organizations to move from strategy to execution.
             </p>
+            <a 
+              href="https://www.linkedin.com/company/fulcrummanagementconsulting/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
+            >
+              <Linkedin className="w-5 h-5 mr-2" />
+              LinkedIn
+            </a>
           </div>
 
           {/* Page Links */}
@@ -48,15 +57,6 @@ export default function Footer() {
               >
                 Contact
               </button>
-              <a 
-                href="https://www.linkedin.com/company/fulcrummanagementconsulting/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center text-gray-400 hover:text-white transition-colors"
-              >
-                <Linkedin className="w-4 h-4 mr-2" />
-                LinkedIn
-              </a>
             </div>
           </div>
 

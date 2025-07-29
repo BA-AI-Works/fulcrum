@@ -42,7 +42,7 @@ export default function Projects() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 2500);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [currentIndex]);
@@ -62,20 +62,17 @@ export default function Projects() {
         <div className="relative max-w-6xl mx-auto px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {visibleProjects.map((project, index) => (
-              <Card key={currentIndex * 2 + index} className="overflow-hidden hover:shadow-xl transition-all duration-300 rounded-xl">
-                <div className="h-48">
+              <Card key={currentIndex * 2 + index} className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group">
+                <div className="h-48 overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold fulcrum-text mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  <Button className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
-                    See More
-                  </Button>
+                  <p className="text-gray-600">{project.description}</p>
                 </CardContent>
               </Card>
             ))}
