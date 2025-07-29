@@ -96,8 +96,11 @@ export default function Journey() {
                       {/* Background line */}
                       <div className="absolute left-8 top-20 w-0.5 bg-gray-300" style={{ height: '180px' }}></div>
                       {/* Progress line - show if this step is active or completed */}
-                      {activeStep > step.id && (
-                        <div className="absolute left-8 top-20 w-0.5 bg-fulcrum-red transition-all duration-500" style={{ height: '180px' }}></div>
+                      {activeStep >= step.id && (
+                        <div className="absolute left-8 top-20 w-0.5 transition-all duration-500" style={{ 
+                          height: '180px',
+                          backgroundColor: '#7A0000'
+                        }}></div>
                       )}
                     </>
                   )}
@@ -115,7 +118,7 @@ export default function Journey() {
                       className={`transition-all duration-300 rounded-2xl ${
                         activeStep === step.id 
                           ? 'border-2 border-fulcrum-red' 
-                          : 'border border-gray-200'
+                          : 'border-2 border-gray-200'
                       }`}
                     >
                       <CardContent className="p-8">
