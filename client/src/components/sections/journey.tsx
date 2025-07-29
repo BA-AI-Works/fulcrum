@@ -1,70 +1,72 @@
-import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface JourneyStep {
   id: number;
+  stepLabel: string;
   title: string;
-  content: string[];
-  bgColor: string;
+  description: string;
 }
 
 const journeySteps: JourneyStep[] = [
   {
     id: 1,
+    stepLabel: "1st step",
     title: "What business priorities can AI serve?",
-    content: [
-      "What is my business strategy and goals?",
-      "Which business metrics do I want to improve?",
-      "Which areas can I benefit from AI the most to realize my business objectives?"
-    ],
-    bgColor: "bg-fulcrum-red"
+    description: "What is my business strategy and goals? Which business metrics do I want to improve? Which areas can I benefit from AI the most to realize my business objectives?"
   },
   {
     id: 2,
+    stepLabel: "2nd step", 
     title: "Where will I use it?",
-    content: [
-      "Is my infrastructure capable of delivering what AI-powered intelligent processes demand?",
-      "How ready is my culture to embrace AI?",
-      "Which processes should I prioritize? How will my roadmap look like?"
-    ],
-    bgColor: "bg-fulcrum-red"
+    description: "Is my infrastructure capable of delivering what AI-powered intelligent processes demand? How ready is my culture to embrace AI? Which processes should I prioritize?"
   },
   {
     id: 3,
+    stepLabel: "3rd step",
     title: "How will I use it?",
-    content: [
-      "What can I improve in the prioritized processes?",
-      "What AI tools are relevant to further enrich intelligent business processes?",
-      "How will I integrate AI to my existing infrastructure?",
-      "Who will do what in managing new processes?"
-    ],
-    bgColor: "bg-fulcrum-red"
+    description: "What can I improve in the prioritized processes? What AI tools are relevant to further enrich intelligent business processes? How will I integrate AI to my existing infrastructure?"
   },
   {
     id: 4,
+    stepLabel: "4th step",
     title: "I use it!",
-    content: [
-      "Implement AI powered intelligent business processes",
-      "Train end-users"
-    ],
-    bgColor: "bg-fulcrum-red"
+    description: "Implement AI powered intelligent business processes and train end-users to maximize the transformation impact across your organization."
   }
 ];
 
 export default function Journey() {
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [activeStep, setActiveStep] = useState<number>(1);
+  const sectionRef = useRef<HTMLElement>(null);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const handleMouseEnter = (id: number) => {
-    setExpandedCard(id);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
 
-  const handleMouseLeave = () => {
-    setExpandedCard(null);
-  };
+      const sectionTop = sectionRef.current.offsetTop;
+      const sectionHeight = sectionRef.current.offsetHeight;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      if (scrollPosition >= sectionTop && scrollPosition <= sectionTop + sectionHeight) {
+        const relativeScroll = scrollPosition - sectionTop;
+        const progressRatio = relativeScroll / sectionHeight;
+        const stepIndex = Math.floor(progressRatio * journeySteps.length);
+        const clampedStep = Math.max(1, Math.min(journeySteps.length, stepIndex + 1));
+        setActiveStep(clampedStep);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const progressHeight = ((activeStep - 1) / (journeySteps.length - 1)) * 100;
 
   return (
-    <section className="py-20 bg-white">
+    <section ref={sectionRef} className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold fulcrum-text mb-6">Transformation Journey</h2>
@@ -73,43 +75,58 @@ export default function Journey() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {journeySteps.map((step, index) => (
-            <div key={step.id} className="flex items-center">
-              <Card 
-                className={`cursor-pointer transition-all duration-300 hover:shadow-xl border-2 w-full ${
-                  expandedCard === step.id ? 'border-fulcrum-red shadow-xl' : 'border-transparent'
-                }`}
-                onMouseEnter={() => handleMouseEnter(step.id)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <CardContent className="p-6">
-                  <div className="text-center mb-4">
-                    <div className={`w-8 h-8 ${step.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                      <span className="text-white font-bold text-sm">{step.id}</span>
+        <div className="max-w-4xl mx-auto">
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-16 top-0 w-0.5 bg-gray-300 h-full"></div>
+            {/* Progress Line */}
+            <div 
+              className="absolute left-16 top-0 w-0.5 bg-fulcrum-red transition-all duration-500 ease-out"
+              style={{ height: `${progressHeight}%` }}
+            ></div>
+
+            <div className="space-y-12">
+              {journeySteps.map((step, index) => (
+                <div 
+                  key={step.id}
+                  ref={(el) => stepRefs.current[index] = el}
+                  className="flex items-start relative"
+                >
+                  {/* Step Number */}
+                  <div className="flex-shrink-0 mr-8">
+                    <div className="text-6xl font-bold text-gray-200">
+                      {step.id.toString().padStart(2, '0')}
                     </div>
-                    <h3 className="text-lg font-bold fulcrum-text">{step.title}</h3>
                   </div>
-                  
-                  {expandedCard === step.id && (
-                    <div className="mt-4">
-                      <ul className="text-gray-600 space-y-2 text-sm">
-                        {step.content.map((item, itemIndex) => (
-                          <li key={itemIndex}>• {item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-              
-              {index < journeySteps.length - 1 && (
-                <div className="hidden md:flex items-center justify-center mx-4">
-                  <ArrowRight className="fulcrum-red w-6 h-6" />
+
+                  {/* Step Content */}
+                  <div className="flex-1 pb-8">
+                    <Card 
+                      className={`transition-all duration-300 rounded-2xl ${
+                        activeStep === step.id 
+                          ? 'border-2 border-fulcrum-red shadow-lg' 
+                          : 'border border-gray-200'
+                      }`}
+                    >
+                      <CardContent className="p-8">
+                        <div className="mb-4">
+                          <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full mb-4">
+                            {step.stepLabel}
+                          </span>
+                        </div>
+                        <h3 className="text-2xl font-bold fulcrum-text mb-4">
+                          {step.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          {step.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
-              )}
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
