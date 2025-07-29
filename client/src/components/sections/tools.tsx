@@ -12,19 +12,19 @@ const tools = [
     title: "AI Readiness Assessment",
     description: "Assesses functions and individuals to identify which functions are more ready in terms of capability and culture to use AI.",
     icon: Users,
-    bgColor: "bg-fulcrum-red-light"
+    bgColor: "bg-fulcrum-red"
   },
   {
     title: "POwerBA",
     description: "Helps Business Analysts craft product requirements documents faster and better, from business needs to test scenarios.",
     icon: FileText,
-    bgColor: "bg-fulcrum-red-lighter"
+    bgColor: "bg-fulcrum-red"
   },
   {
     title: "AI Competency-based Assessment",
     description: "Evaluates employee competencies for AI roles and generates capability development reports tailored by role.",
     icon: Brain,
-    bgColor: "bg-green-600"
+    bgColor: "bg-fulcrum-red"
   }
 ];
 

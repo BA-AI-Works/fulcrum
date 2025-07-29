@@ -50,11 +50,11 @@ export default function ModularProof() {
         </div>
 
         {/* Data Privacy Module */}
-        <div className="max-w-4xl mx-auto mt-16">
-          <Card className="border-l-4 border-fulcrum-red shadow-lg bg-gradient-to-r from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto mt-16">
+          <Card className="hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-fulcrum-red">
             <CardContent className="p-8 text-center">
-              <h5 className="text-2xl font-bold fulcrum-text mb-4">Will I share my data with 3rd parties?</h5>
-              <p className="text-lg text-gray-600"><strong>Data Privacy</strong> — You can keep your data locally and do not share</p>
+              <h3 className="text-xl font-bold fulcrum-text mb-4">Will I share my data with 3rd parties?</h3>
+              <p className="text-gray-600 leading-relaxed"><strong>Data Privacy</strong> — You can keep your data locally and do not share</p>
             </CardContent>
           </Card>
         </div>

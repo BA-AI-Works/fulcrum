@@ -31,28 +31,23 @@ export default function Navigation() {
   return (
     <nav className={`fixed top-0 left-0 right-0 bg-white z-50 border-b border-fulcrum-gray transition-all duration-300 ${scrolled ? 'shadow-lg' : 'shadow-sm'}`}>
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <FulcrumLogo />
+        <button 
+          onClick={() => scrollToSection('contact')}
+          className="fulcrum-text hover:text-fulcrum-red transition-colors"
+        >
+          Contact
+        </button>
         
-        <div className="hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
-          <button 
-            onClick={() => scrollToSection('home')}
-            className="fulcrum-text hover:text-fulcrum-red transition-colors"
-          >
-            Home
-          </button>
-          <button 
-            onClick={() => scrollToSection('projects')}
-            className="fulcrum-text hover:text-fulcrum-red transition-colors"
-          >
-            Projects
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="fulcrum-text hover:text-fulcrum-red transition-colors"
-          >
-            Contact
-          </button>
+        <div className="absolute left-1/2 transform -translate-x-1/2">
+          <FulcrumLogo />
         </div>
+        
+        <button 
+          onClick={() => scrollToSection('projects')}
+          className="fulcrum-text hover:text-fulcrum-red transition-colors"
+        >
+          Projects
+        </button>
 
         <Button
           variant="ghost"
@@ -67,12 +62,6 @@ export default function Navigation() {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-fulcrum-gray">
           <div className="px-6 py-4 space-y-3">
-            <button 
-              onClick={() => scrollToSection('home')}
-              className="block fulcrum-text hover:text-fulcrum-red transition-colors"
-            >
-              Home
-            </button>
             <button 
               onClick={() => scrollToSection('projects')}
               className="block fulcrum-text hover:text-fulcrum-red transition-colors"

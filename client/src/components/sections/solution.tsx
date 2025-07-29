@@ -30,7 +30,7 @@ export default function Solution() {
 
           <Card className="flex-1 transform hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl">
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-fulcrum-red-light rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-fulcrum-red rounded-full flex items-center justify-center mx-auto mb-6">
                 <Settings className="text-white w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold fulcrum-text mb-4">Operation & Process Consulting</h3>
@@ -44,7 +44,7 @@ export default function Solution() {
 
           <Card className="flex-1 transform hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl">
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-fulcrum-red-lighter rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-fulcrum-red rounded-full flex items-center justify-center mx-auto mb-6">
                 <Bot className="text-white w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold fulcrum-text mb-4">Process Automation with AI Agents</h3>

@@ -28,7 +28,7 @@ const journeySteps: JourneyStep[] = [
       "How ready is my culture to embrace AI?",
       "Which processes should I prioritize? How will my roadmap look like?"
     ],
-    bgColor: "bg-fulcrum-red-light"
+    bgColor: "bg-fulcrum-red"
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const journeySteps: JourneyStep[] = [
       "How will I integrate AI to my existing infrastructure?",
       "Who will do what in managing new processes?"
     ],
-    bgColor: "bg-fulcrum-red-lighter"
+    bgColor: "bg-fulcrum-red"
   },
   {
     id: 4,
@@ -48,15 +48,19 @@ const journeySteps: JourneyStep[] = [
       "Implement AI powered intelligent business processes",
       "Train end-users"
     ],
-    bgColor: "bg-green-600"
+    bgColor: "bg-fulcrum-red"
   }
 ];
 
 export default function Journey() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
-  const toggleCard = (id: number) => {
-    setExpandedCard(expandedCard === id ? null : id);
+  const handleMouseEnter = (id: number) => {
+    setExpandedCard(id);
+  };
+
+  const handleMouseLeave = () => {
+    setExpandedCard(null);
   };
 
   return (
@@ -76,7 +80,8 @@ export default function Journey() {
                 className={`cursor-pointer transition-all duration-300 hover:shadow-xl border-2 w-full ${
                   expandedCard === step.id ? 'border-fulcrum-red shadow-xl' : 'border-transparent'
                 }`}
-                onClick={() => toggleCard(step.id)}
+                onMouseEnter={() => handleMouseEnter(step.id)}
+                onMouseLeave={handleMouseLeave}
               >
                 <CardContent className="p-6">
                   <div className="text-center mb-4">

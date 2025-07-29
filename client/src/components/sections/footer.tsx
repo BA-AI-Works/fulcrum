@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { MapPin, Linkedin } from "lucide-react";
 import FulcrumLogo from "@/components/fulcrum-logo";
 import { Button } from "@/components/ui/button";
 
@@ -37,12 +37,6 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6">Navigation</h3>
             <div className="space-y-3">
               <button 
-                onClick={() => scrollToSection('home')}
-                className="block text-gray-400 hover:text-white transition-colors"
-              >
-                Home
-              </button>
-              <button 
                 onClick={() => scrollToSection('projects')}
                 className="block text-gray-400 hover:text-white transition-colors"
               >
@@ -54,6 +48,15 @@ export default function Footer() {
               >
                 Contact
               </button>
+              <a 
+                href="https://www.linkedin.com/company/fulcrummanagementconsulting/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center text-gray-400 hover:text-white transition-colors"
+              >
+                <Linkedin className="w-4 h-4 mr-2" />
+                LinkedIn
+              </a>
             </div>
           </div>
 
