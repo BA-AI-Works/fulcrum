@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 13.3%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 13.3%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 13.3%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(0, 100%, 24%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 13.3%);
+  --radius: 0.5rem;
+  
+  /* Fulcrum Brand Colors */
+  --fulcrum-red: hsl(0, 100%, 24%);
+  --fulcrum-red-light: hsl(0, 55%, 35%);
+  --fulcrum-red-lighter: hsl(0, 35%, 50%);
+  --fulcrum-gray: hsl(0, 0%, 72%);
+  --fulcrum-text: hsl(20, 14.3%, 13.3%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(0, 100%, 24%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .fulcrum-red {
+    color: var(--fulcrum-red);
+  }
+  
+  .bg-fulcrum-red {
+    background-color: var(--fulcrum-red);
+  }
+  
+  .fulcrum-red-light {
+    color: var(--fulcrum-red-light);
+  }
+  
+  .bg-fulcrum-red-light {
+    background-color: var(--fulcrum-red-light);
+  }
+  
+  .fulcrum-red-lighter {
+    color: var(--fulcrum-red-lighter);
+  }
+  
+  .bg-fulcrum-red-lighter {
+    background-color: var(--fulcrum-red-lighter);
+  }
+  
+  .fulcrum-gray {
+    color: var(--fulcrum-gray);
+  }
+  
+  .border-fulcrum-gray {
+    border-color: var(--fulcrum-gray);
+  }
+  
+  .fulcrum-text {
+    color: var(--fulcrum-text);
+  }
+}
