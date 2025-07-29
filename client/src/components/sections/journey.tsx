@@ -42,19 +42,24 @@ export default function Journey() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current) return;
+      if (!sectionRef.current || !stepRefs.current.length) return;
 
-      const sectionTop = sectionRef.current.offsetTop;
-      const sectionHeight = sectionRef.current.offsetHeight;
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      const viewportMiddle = window.scrollY + window.innerHeight / 2;
       
-      if (scrollPosition >= sectionTop && scrollPosition <= sectionTop + sectionHeight) {
-        const relativeScroll = scrollPosition - sectionTop;
-        const progressRatio = relativeScroll / sectionHeight;
-        const stepIndex = Math.floor(progressRatio * journeySteps.length);
-        const clampedStep = Math.max(1, Math.min(journeySteps.length, stepIndex + 1));
-        setActiveStep(clampedStep);
-      }
+      // Find which step is currently in view
+      let currentActiveStep = 1;
+      stepRefs.current.forEach((stepRef, index) => {
+        if (stepRef) {
+          const stepTop = stepRef.offsetTop;
+          const stepBottom = stepTop + stepRef.offsetHeight;
+          
+          if (viewportMiddle >= stepTop && viewportMiddle <= stepBottom) {
+            currentActiveStep = index + 1;
+          }
+        }
+      });
+      
+      setActiveStep(currentActiveStep);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -63,7 +68,8 @@ export default function Journey() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const progressHeight = ((activeStep - 1) / (journeySteps.length - 1)) * 100;
+  // Calculate progress height - stops at step 4, doesn't go beyond
+  const progressHeight = Math.min(((activeStep - 1) / (journeySteps.length - 1)) * 100, 100);
 
   return (
     <section ref={sectionRef} className="py-20 bg-white">
@@ -77,30 +83,34 @@ export default function Journey() {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-16 top-0 w-0.5 bg-gray-300 h-full"></div>
-            {/* Progress Line */}
-            <div 
-              className="absolute left-16 top-0 w-0.5 bg-fulcrum-red transition-all duration-500 ease-out"
-              style={{ height: `${progressHeight}%` }}
-            ></div>
-
-            <div className="space-y-12">
+            <div className="space-y-16">
               {journeySteps.map((step, index) => (
                 <div 
                   key={step.id}
                   ref={(el) => stepRefs.current[index] = el}
                   className="flex items-start relative"
                 >
+                  {/* Timeline Line - only show if not the last step */}
+                  {index < journeySteps.length - 1 && (
+                    <>
+                      {/* Background line */}
+                      <div className="absolute left-8 top-20 w-0.5 bg-gray-300" style={{ height: '120px' }}></div>
+                      {/* Progress line - only show if this step is active or completed */}
+                      {activeStep > step.id && (
+                        <div className="absolute left-8 top-20 w-0.5 bg-fulcrum-red transition-all duration-500" style={{ height: '120px' }}></div>
+                      )}
+                    </>
+                  )}
+
                   {/* Step Number */}
-                  <div className="flex-shrink-0 mr-8">
-                    <div className="text-6xl font-bold text-gray-200">
+                  <div className="flex-shrink-0 mr-8 relative z-10">
+                    <div className="text-6xl font-bold text-gray-300 bg-white pr-4">
                       {step.id.toString().padStart(2, '0')}
                     </div>
                   </div>
 
                   {/* Step Content */}
-                  <div className="flex-1 pb-8">
+                  <div className="flex-1">
                     <Card 
                       className={`transition-all duration-300 rounded-2xl ${
                         activeStep === step.id 
