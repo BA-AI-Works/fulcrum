@@ -40,26 +40,24 @@ export default function Journey() {
   const sectionRef = useRef<HTMLElement>(null);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current || !stepRefs.current.length) return;
 
-      const viewportMiddle = window.scrollY + window.innerHeight / 2;
+      const sectionTop = sectionRef.current.offsetTop - window.innerHeight * 0.3;
+      const sectionHeight = sectionRef.current.offsetHeight;
+      const scrollY = window.scrollY;
       
-      // Find which step is currently in view
-      let currentActiveStep = 1;
-      stepRefs.current.forEach((stepRef, index) => {
-        if (stepRef) {
-          const stepTop = stepRef.offsetTop;
-          const stepBottom = stepTop + stepRef.offsetHeight;
-          
-          if (viewportMiddle >= stepTop && viewportMiddle <= stepBottom) {
-            currentActiveStep = index + 1;
-          }
-        }
-      });
+      // Calculate scroll progress within the section
+      const progress = Math.max(0, Math.min(1, (scrollY - sectionTop) / (sectionHeight * 0.8)));
+      setScrollProgress(progress);
       
-      setActiveStep(currentActiveStep);
+      // Determine active step based on progress
+      const stepProgress = progress * (journeySteps.length - 1);
+      const currentActiveStep = Math.floor(stepProgress) + 1;
+      setActiveStep(Math.min(currentActiveStep, journeySteps.length));
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -67,9 +65,6 @@ export default function Journey() {
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Calculate progress height - stops at step 4, doesn't go beyond
-  const progressHeight = Math.min(((activeStep - 1) / (journeySteps.length - 1)) * 100, 100);
 
   return (
     <section ref={sectionRef} className="py-20 bg-white">
@@ -83,6 +78,18 @@ export default function Journey() {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
+            {/* Continuous Timeline */}
+            <div className="absolute left-8 top-20 w-0.5 bg-gray-300" style={{ height: 'calc(100% - 200px)' }}></div>
+            {/* Continuous Progress Line */}
+            <div 
+              className="absolute left-8 top-20 w-0.5 transition-all duration-300 ease-out"
+              style={{ 
+                height: `${scrollProgress * (100 - 12)}%`,
+                backgroundColor: '#7A0000',
+                maxHeight: 'calc(100% - 200px)'
+              }}
+            ></div>
+
             <div className="space-y-16">
               {journeySteps.map((step, index) => (
                 <div 
@@ -90,21 +97,6 @@ export default function Journey() {
                   ref={(el) => stepRefs.current[index] = el}
                   className="flex items-start relative"
                 >
-                  {/* Timeline Line - only show if not the last step */}
-                  {index < journeySteps.length - 1 && (
-                    <>
-                      {/* Background line */}
-                      <div className="absolute left-8 top-20 w-0.5 bg-gray-300" style={{ height: '180px' }}></div>
-                      {/* Progress line - show if this step is active or completed */}
-                      {activeStep >= step.id && (
-                        <div className="absolute left-8 top-20 w-0.5 transition-all duration-500" style={{ 
-                          height: '180px',
-                          backgroundColor: '#7A0000'
-                        }}></div>
-                      )}
-                    </>
-                  )}
-
                   {/* Step Number */}
                   <div className="flex-shrink-0 mr-8 relative z-10">
                     <div className="text-6xl font-bold text-gray-300 bg-white pr-4">
