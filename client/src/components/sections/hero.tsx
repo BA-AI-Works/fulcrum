@@ -31,7 +31,7 @@ export default function Hero() {
         </p>
         <Button 
           onClick={scrollToSolution}
-          className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           size="lg"
         >
           Start Your AI Journey

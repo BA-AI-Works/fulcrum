@@ -33,7 +33,7 @@ export default function Navigation() {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <FulcrumLogo />
         
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
           <button 
             onClick={() => scrollToSection('home')}
             className="fulcrum-text hover:text-fulcrum-red transition-colors"

@@ -19,15 +19,20 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="bg-fulcrum-text text-white py-16">
+    <footer id="contact" className="py-16" style={{ backgroundColor: '#1C1C1C', color: 'white' }}>
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Logo and Description */}
           <div>
             <div className="mb-6">
-              <FulcrumLogo className="text-white" />
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-fulcrum-red transform -skew-x-12 flex items-center justify-center rounded-sm">
+                  <span className="text-white font-bold text-lg transform skew-x-12">F</span>
+                </div>
+                <span className="text-2xl font-bold text-white">fulcrum</span>
+              </div>
             </div>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               AI-powered organizational transformation consulting for enterprise excellence.
             </p>
           </div>
@@ -38,19 +43,19 @@ export default function Footer() {
             <div className="space-y-3">
               <button 
                 onClick={() => scrollToSection('home')}
-                className="block text-gray-300 hover:text-white transition-colors"
+                className="block text-gray-400 hover:text-white transition-colors"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('projects')}
-                className="block text-gray-300 hover:text-white transition-colors"
+                className="block text-gray-400 hover:text-white transition-colors"
               >
                 Projects
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="block text-gray-300 hover:text-white transition-colors"
+                className="block text-gray-400 hover:text-white transition-colors"
               >
                 Contact
               </button>
@@ -65,14 +70,14 @@ export default function Footer() {
             <div className="mb-6">
               <Button 
                 onClick={openNewsletterForm}
-                className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 w-full"
+                className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-6 py-4 rounded-full font-semibold transition-all duration-300 w-full"
               >
                 Subscribe to Newsletter
               </Button>
             </div>
 
             {/* Address */}
-            <div className="text-gray-300 text-sm">
+            <div className="text-gray-400 text-sm">
               <p className="mb-2 flex items-start">
                 <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
                 Maslak 42 Plaza, A Blok, No: 9, Kat:11
@@ -82,7 +87,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-600 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-700 pt-8 text-center text-gray-500">
           <p>&copy; 2024 Fulcrum. All rights reserved.</p>
         </div>
       </div>

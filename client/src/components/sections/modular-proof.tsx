@@ -43,17 +43,20 @@ export default function ModularProof() {
               Will I lose control over business processes?
             </h3>
             <h4 className="text-xl font-semibold fulcrum-red mb-6">Human-in-the-loop</h4>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            <p className="text-lg text-gray-600 leading-relaxed">
               You will always be at the helm and have the liberty to set the AI autonomy level.
             </p>
-            
-            <Card className="border-l-4 border-fulcrum-red shadow-sm">
-              <CardContent className="p-6">
-                <h5 className="text-lg font-bold fulcrum-text mb-3">Will I share my data with 3rd parties?</h5>
-                <p className="text-gray-600"><strong>Data Privacy</strong> — You can keep your data locally and do not share</p>
-              </CardContent>
-            </Card>
           </div>
+        </div>
+
+        {/* Data Privacy Module */}
+        <div className="max-w-4xl mx-auto mt-16">
+          <Card className="border-l-4 border-fulcrum-red shadow-lg bg-gradient-to-r from-gray-50 to-white">
+            <CardContent className="p-8 text-center">
+              <h5 className="text-2xl font-bold fulcrum-text mb-4">Will I share my data with 3rd parties?</h5>
+              <p className="text-lg text-gray-600"><strong>Data Privacy</strong> — You can keep your data locally and do not share</p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

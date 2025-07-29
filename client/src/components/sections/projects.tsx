@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -38,6 +38,15 @@ export default function Projects() {
     setCurrentIndex((currentIndex - 1 + totalSlides) % totalSlides);
   };
 
+  // Auto scroll functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   const visibleProjects = projects.slice(currentIndex * 2, (currentIndex * 2) + 2);
 
   return (
@@ -50,11 +59,11 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-6xl mx-auto px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {visibleProjects.map((project, index) => (
-              <Card key={currentIndex * 2 + index} className="overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="aspect-video">
+              <Card key={currentIndex * 2 + index} className="overflow-hidden hover:shadow-xl transition-all duration-300 rounded-xl">
+                <div className="h-48">
                   <img 
                     src={project.image} 
                     alt={project.title}
@@ -63,34 +72,37 @@ export default function Projects() {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold fulcrum-text mb-3">{project.title}</h3>
-                  <p className="text-gray-600">{project.description}</p>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <Button className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    See More
+                  </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Carousel Controls */}
+          {/* Fixed Position Carousel Controls */}
           <Button
             variant="outline"
             size="sm"
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg text-fulcrum-red hover:bg-fulcrum-red hover:text-white transition-all duration-300"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-4 shadow-lg text-fulcrum-red hover:bg-fulcrum-red hover:text-white transition-all duration-300 z-10"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-5 h-5" />
           </Button>
           
           <Button
             variant="outline"
             size="sm"
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg text-fulcrum-red hover:bg-fulcrum-red hover:text-white transition-all duration-300"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-4 shadow-lg text-fulcrum-red hover:bg-fulcrum-red hover:text-white transition-all duration-300 z-10"
           >
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-5 h-5" />
           </Button>
         </div>
 
         <div className="text-center mt-12">
-          <Button className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+          <Button className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
             See All Projects
           </Button>
         </div>
