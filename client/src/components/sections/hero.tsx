@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import fulcrumBackgroundPath from "@assets/fulcrum-background_1753804782085.jpg";
 
 export default function Hero() {
   const scrollToSolution = () => {
@@ -13,21 +14,22 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center">
+    <section id="home" className="relative min-h-screen flex items-center">
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080')"
+          backgroundImage: `url(${fulcrumBackgroundPath})`
         }}
       />
-      <div className="absolute inset-0 bg-black bg-opacity-60" />
       
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          We're Building Tomorrow
+      <div className="relative z-10 px-6 max-w-2xl ml-8 md:ml-16">
+        <h1 className="text-5xl md:text-7xl font-medium mb-6 leading-tight">
+          <span style={{ color: '#7A0000' }}>We're Building</span>
+          <br />
+          <span style={{ color: '#3a3a3a' }}>Tomorrow</span>
         </h1>
-        <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
-          From vision to execution, Fulcrum helps you design and deliver AI-powered transformation.
+        <p className="text-xl md:text-2xl text-gray-800 mb-8 leading-relaxed">
+          Fulcrum empowers AI-Powered organizations to move from strategy to execution.
         </p>
         <Button 
           onClick={scrollToSolution}
