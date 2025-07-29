@@ -41,6 +41,7 @@ export default function Journey() {
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [cardAnimations, setCardAnimations] = useState<{ [key: number]: number }>({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,6 +59,34 @@ export default function Journey() {
       const stepProgress = progress * (journeySteps.length - 1);
       const currentActiveStep = Math.floor(stepProgress) + 1;
       setActiveStep(Math.min(currentActiveStep, journeySteps.length));
+
+      // Calculate card animations
+      const newCardAnimations: { [key: number]: number } = {};
+      stepRefs.current.forEach((stepRef, index) => {
+        if (stepRef) {
+          const rect = stepRef.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          const cardCenter = rect.top + rect.height / 2;
+          
+          // Start animation when card is 80% visible from bottom
+          const animationStart = windowHeight * 0.8;
+          const animationEnd = windowHeight * 0.2;
+          
+          if (cardCenter <= animationStart && cardCenter >= animationEnd) {
+            // Card is in animation range - calculate progress (0 to 1)
+            const animationProgress = (animationStart - cardCenter) / (animationStart - animationEnd);
+            newCardAnimations[index + 1] = Math.max(0, Math.min(1, animationProgress));
+          } else if (cardCenter < animationEnd) {
+            // Card is fully animated
+            newCardAnimations[index + 1] = 1;
+          } else {
+            // Card hasn't started animating
+            newCardAnimations[index + 1] = 0;
+          }
+        }
+      });
+      
+      setCardAnimations(newCardAnimations);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -105,7 +134,13 @@ export default function Journey() {
                   </div>
 
                   {/* Step Content */}
-                  <div className="flex-1">
+                  <div 
+                    className="flex-1 transition-all duration-700 ease-out"
+                    style={{
+                      transform: `translateY(${50 - (cardAnimations[step.id] || 0) * 50}px)`,
+                      opacity: 0.3 + (cardAnimations[step.id] || 0) * 0.7
+                    }}
+                  >
                     <Card 
                       className={`transition-all duration-300 rounded-2xl ${
                         activeStep === step.id 
