@@ -94,10 +94,10 @@ export default function Journey() {
                   {index < journeySteps.length - 1 && (
                     <>
                       {/* Background line */}
-                      <div className="absolute left-8 top-20 w-0.5 bg-gray-300" style={{ height: '120px' }}></div>
-                      {/* Progress line - only show if this step is active or completed */}
+                      <div className="absolute left-8 top-20 w-0.5 bg-gray-300" style={{ height: '180px' }}></div>
+                      {/* Progress line - show if this step is active or completed */}
                       {activeStep > step.id && (
-                        <div className="absolute left-8 top-20 w-0.5 bg-fulcrum-red transition-all duration-500" style={{ height: '120px' }}></div>
+                        <div className="absolute left-8 top-20 w-0.5 bg-fulcrum-red transition-all duration-500" style={{ height: '180px' }}></div>
                       )}
                     </>
                   )}
@@ -114,7 +114,7 @@ export default function Journey() {
                     <Card 
                       className={`transition-all duration-300 rounded-2xl ${
                         activeStep === step.id 
-                          ? 'border-2 border-fulcrum-red shadow-lg' 
+                          ? 'border-2 border-fulcrum-red' 
                           : 'border border-gray-200'
                       }`}
                     >
