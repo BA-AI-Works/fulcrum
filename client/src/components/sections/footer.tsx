@@ -25,12 +25,7 @@ export default function Footer() {
           {/* Logo and Description */}
           <div>
             <div className="mb-6">
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-fulcrum-red transform -skew-x-12 flex items-center justify-center rounded-sm">
-                  <span className="text-white font-bold text-lg transform skew-x-12">F</span>
-                </div>
-                <span className="text-2xl font-bold text-white">fulcrum</span>
-              </div>
+              <FulcrumLogo />
             </div>
             <p className="text-gray-400 leading-relaxed">
               AI-powered organizational transformation consulting for enterprise excellence.
