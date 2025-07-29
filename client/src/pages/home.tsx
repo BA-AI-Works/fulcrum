@@ -5,8 +5,8 @@ import Journey from "@/components/sections/journey";
 import ModularProof from "@/components/sections/modular-proof";
 import Tools from "@/components/sections/tools";
 import Projects from "@/components/sections/projects";
+import AIInfrastructure from "@/components/sections/ai-infrastructure";
 import Team from "@/components/sections/team";
-import Banner from "@/components/sections/banner";
 import Footer from "@/components/sections/footer";
 
 export default function Home() {
@@ -19,8 +19,8 @@ export default function Home() {
       <ModularProof />
       <Tools />
       <Projects />
+      <AIInfrastructure />
       <Team />
-      <Banner />
       <Footer />
     </div>
   );

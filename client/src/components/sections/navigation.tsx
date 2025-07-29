@@ -29,25 +29,25 @@ export default function Navigation() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 bg-white z-50 border-b border-fulcrum-gray transition-all duration-300 ${scrolled ? 'shadow-lg' : 'shadow-sm'}`}>
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <button 
-          onClick={() => scrollToSection('contact')}
-          className="fulcrum-text hover:text-fulcrum-red transition-colors"
-        >
-          Contact
-        </button>
-        
-        <div className="absolute left-1/2 transform -translate-x-1/2">
+    <nav className={`fixed top-0 left-0 right-0 bg-white z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : 'shadow-sm'}`} style={{ borderBottom: '1px solid #DBDBDB' }}>
+      <div className="container mx-auto px-6 py-4 flex items-center justify-center">
+        <div className="flex items-center space-x-12">
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="fulcrum-text hover:text-fulcrum-red transition-colors"
+          >
+            Contact
+          </button>
+          
           <FulcrumLogo />
+          
+          <button 
+            onClick={() => scrollToSection('projects')}
+            className="fulcrum-text hover:text-fulcrum-red transition-colors"
+          >
+            Projects
+          </button>
         </div>
-        
-        <button 
-          onClick={() => scrollToSection('projects')}
-          className="fulcrum-text hover:text-fulcrum-red transition-colors"
-        >
-          Projects
-        </button>
 
         <Button
           variant="ghost"
