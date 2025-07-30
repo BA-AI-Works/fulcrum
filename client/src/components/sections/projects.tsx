@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogOverlay } from "@/components/ui/dialog";
 
 const projects = [
   {
@@ -171,7 +171,11 @@ export default function Projects() {
         </div>
 
         {/* Project Details Dialog */}
-        <Dialog open={selectedProject !== null} onOpenChange={() => setSelectedProject(null)}>
+        <Dialog open={selectedProject !== null} onOpenChange={(open) => {
+          if (!open) {
+            setSelectedProject(null);
+          }
+        }}>
           <DialogContent className="max-w-5xl max-h-[90vh] p-0 relative">
             {/* Navigation Arrows - Outside the dialog */}
             <Button
