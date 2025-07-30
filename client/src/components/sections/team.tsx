@@ -18,7 +18,7 @@ const teamMembers = [
     name: "Meltem Bayrak",
     title: "Head of Operations",
     bio: "Operations excellence expert focused on AI process optimization and implementation.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
   },
   {
     name: "Emrah Yayıcı",
@@ -39,26 +39,28 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {teamMembers.map((member, index) => (
-            <Card key={index} className="text-center group hover:shadow-lg transition-all duration-300 border-2 border-gray-200 hover:border-fulcrum-red">
-              <CardContent className="p-6">
-                <div className="relative mb-6 mx-auto w-40 h-40">
-                  <img 
-                    src={member.image} 
-                    alt={`${member.name} - Leadership team member`}
-                    className="w-full h-full rounded-lg object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 rounded-lg transition-all duration-300 flex items-center justify-center">
-                    <Linkedin className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-300" />
+        <div className="max-w-6xl mx-auto bg-stone-200 rounded-2xl p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="text-center group">
+                <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="relative mb-6 mx-auto">
+                    <img 
+                      src={member.image} 
+                      alt={`${member.name} - Leadership team member`}
+                      className="w-full aspect-square rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                    <div className="absolute bottom-3 right-3 bg-black bg-opacity-0 group-hover:bg-opacity-20 rounded-full p-2 transition-all duration-300">
+                      <Linkedin className="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                    </div>
                   </div>
+                  <h3 className="text-lg font-bold fulcrum-text mb-1">{member.name}</h3>
+                  <p className="fulcrum-red font-semibold mb-3 text-sm">{member.title}</p>
+                  <p className="text-gray-600 text-xs leading-relaxed">{member.bio}</p>
                 </div>
-                <h3 className="text-lg font-bold fulcrum-text mb-2">{member.name}</h3>
-                <p className="fulcrum-red font-semibold mb-3 text-sm">{member.title}</p>
-                <p className="text-gray-600 text-xs leading-relaxed">{member.bio}</p>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

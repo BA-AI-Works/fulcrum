@@ -33,19 +33,19 @@ export default function Navigation() {
       <div className="container mx-auto px-6 py-4 flex items-center justify-center">
         <div className="flex items-center space-x-12">
           <button 
-            onClick={() => scrollToSection('contact')}
+            onClick={() => scrollToSection('projects')}
             className="fulcrum-text hover:text-fulcrum-red transition-colors"
           >
-            Contact
+            Projects
           </button>
           
           <FulcrumLogo />
           
           <button 
-            onClick={() => scrollToSection('projects')}
+            onClick={() => scrollToSection('contact')}
             className="fulcrum-text hover:text-fulcrum-red transition-colors"
           >
-            Projects
+            Contact
           </button>
         </div>
 
