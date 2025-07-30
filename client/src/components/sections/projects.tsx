@@ -10,13 +10,14 @@ const projects = [
     description: "Client is a leading AI trainings company aiming to build an intelligent, end-to-end learning platform.",
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     details: {
-      subtitle: "Client is a leading AI trainings company aiming to build an intelligent, end-to-end learning platform.",
+      subtitle: "Client is a leading AI trainings company aiming to build an intelligent, end-to-end learning platform. The objective was to design an AI-powered LMS that could autonomously detect individual learning needs and manage the entire learning journey.",
       scope: [
-        "Analyzed learning requirements and user personas",
-        "Designed AI-powered content recommendation system",
-        "Implemented adaptive learning algorithms",
-        "Created personalized learning pathways",
-        "Delivered comprehensive training platform"
+        "Defined the end-to-end learning experience vision and the role of AI across user touchpoints",
+        "Designed the decision architecture to assess employee skill gaps, learning history, and role-specific needs",
+        "Developed a recommendation engine logic to match users with tailored content, learning paths and programs",
+        "Created a modular, user-centered interface structure for discovery, planning, purchasing, and continuous learning",
+        "Integrated feedback loops to refine suggestions based on learning outcomes and behavioral data",
+        "Delivered product blueprint, user flows, and experience principles to guide future development phases"
       ]
     }
   },
@@ -25,13 +26,14 @@ const projects = [
     description: "Efficiently match CVs to job openings with contextual analysis for streamlined recruitment processes.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     details: {
-      subtitle: "Efficiently match CVs to job openings with contextual analysis for streamlined recruitment processes.",
+      subtitle: "Client is an IT outsourcing services provider aiming to optimize its talent placement processes. The objective was to design an AI-powered matching engine that could efficiently analyze incoming CVs and match them to open roles based on relevance and fit.",
       scope: [
-        "Developed CV parsing and analysis algorithms",
-        "Created job requirement matching system",
-        "Implemented contextual ranking algorithms",
-        "Built automated screening workflows",
-        "Delivered enhanced recruitment platform"
+        "Defined the end-to-end use case, from CV intake to job-role matching, in alignment with internal recruitment workflows",
+        "Designed the matching algorithm logic to assess skills, experience, and contextual indicators in both candidate profiles and open positions",
+        "Developed a scoring model to prioritize fit between applicants and roles, enabling faster and more accurate placement decisions",
+        "Integrated human-in-the-loop mechanisms to validate model outputs and fine-tune learning over time",
+        "Delivered user flows and interface guidelines for recruiters to review, compare, and act on AI-generated matches",
+        "Designed the data architecture to support scalability and performance"
       ]
     }
   },
@@ -58,13 +60,14 @@ const projects = [
     description: "SEO optimization, content publishing, and multilingual conversational agents for enhanced marketing intelligence.",
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     details: {
-      subtitle: "SEO optimization, content publishing, and multilingual conversational agents for enhanced marketing intelligence.",
+      subtitle: "The client wanted to streamline marketing operations - ranging from customer support to content publishing, performance analysis, and SEO/AIEO optimization - across multiple languages and social media platforms",
       scope: [
-        "Developed AI-powered SEO optimization tools",
-        "Created automated content publishing systems",
-        "Built multilingual conversational agents",
-        "Implemented marketing intelligence dashboards",
-        "Delivered comprehensive marketing automation platform"
+        "Built multilingual conversational agents integrated into WhatsApp and Telegram to provide automated, accurate product support with live-agent fallback",
+        "Developed an AI-assisted publishing agent to manage multi-channel content scheduling and distribution, ensuring platform compatibility and format validation",
+        "Embedded planning intelligence to optimize content calendars and surface actionable recommendations based on content gaps and posting rhythm",
+        "Created a performance analytics agent that interprets channel data and generates weekly insights on content impact, trends, and engagement patterns",
+        "Implemented a dual-mode SEO/AIEO agent that assesses content visibility for both search engines and LLMs (e.g., ChatGPT), and delivers GPT-powered improvement suggestions",
+        "Integrated human-in-the-loop checkpoints for editorial oversight, transparency, and strategic control"
       ]
     }
   }
@@ -169,66 +172,66 @@ export default function Projects() {
 
         {/* Project Details Dialog */}
         <Dialog open={selectedProject !== null} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-4xl max-h-[90vh] p-0">
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
-              {/* Left side - Project Details */}
-              <div className="p-8 overflow-y-auto max-h-[90vh]">
-                <DialogHeader className="mb-6">
-                  <DialogTitle className="text-2xl font-bold fulcrum-text">
-                    {projects[dialogProjectIndex]?.title}
-                  </DialogTitle>
-                  <p className="text-gray-600 mt-2">
-                    {projects[dialogProjectIndex]?.details.subtitle}
-                  </p>
-                </DialogHeader>
+          <DialogContent className="max-w-5xl max-h-[90vh] p-0 relative">
+            {/* Navigation Arrows - Outside the dialog */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={prevProject}
+              className="absolute -left-16 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-4 shadow-lg text-fulcrum-red hover:bg-fulcrum-red hover:text-white transition-all duration-300 z-50"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={nextProject}
+              className="absolute -right-16 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-4 shadow-lg text-fulcrum-red hover:bg-fulcrum-red hover:text-white transition-all duration-300 z-50"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
 
+            <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+              {/* Left side - Project Image, Title, Subtitle */}
+              <div className="p-8 flex flex-col">
+                <div className="mb-6">
+                  <img 
+                    src={projects[dialogProjectIndex]?.image} 
+                    alt={projects[dialogProjectIndex]?.title}
+                    className="w-full h-64 object-cover rounded-lg mb-6"
+                  />
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold fulcrum-text mb-4">
+                      {projects[dialogProjectIndex]?.title}
+                    </DialogTitle>
+                    <p className="text-gray-600">
+                      {projects[dialogProjectIndex]?.details.subtitle}
+                    </p>
+                  </DialogHeader>
+                </div>
+
+                {/* Project Counter */}
+                <div className="mt-auto text-center">
+                  <span className="text-sm text-gray-500">
+                    {dialogProjectIndex + 1} of {projects.length}
+                  </span>
+                </div>
+              </div>
+
+              {/* Right side - Scope */}
+              <div className="p-8 overflow-y-auto max-h-[90vh] bg-gray-50">
                 <div>
-                  <h4 className="text-lg font-semibold fulcrum-red mb-4">Scope:</h4>
-                  <ul className="space-y-2">
+                  <h4 className="text-xl font-semibold fulcrum-red mb-6">Scope:</h4>
+                  <ul className="space-y-4">
                     {projects[dialogProjectIndex]?.details.scope.map((item, index) => (
-                      <li key={index} className="text-gray-600 flex items-start">
-                        <span className="fulcrum-red mr-2">•</span>
+                      <li key={index} className="text-gray-700 flex items-start leading-relaxed">
+                        <span className="fulcrum-red mr-3 mt-1.5 text-sm">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-
-                {/* Carousel Navigation */}
-                <div className="flex items-center justify-between mt-8 pt-6 border-t">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={prevProject}
-                    className="flex items-center gap-2"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                    Previous
-                  </Button>
-                  
-                  <span className="text-sm text-gray-500">
-                    {dialogProjectIndex + 1} of {projects.length}
-                  </span>
-                  
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={nextProject}
-                    className="flex items-center gap-2"
-                  >
-                    Next
-                    <ChevronRight className="w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
-
-              {/* Right side - Project Image */}
-              <div className="relative">
-                <img 
-                  src={projects[dialogProjectIndex]?.image} 
-                  alt={projects[dialogProjectIndex]?.title}
-                  className="w-full h-full object-cover rounded-r-lg"
-                />
               </div>
             </div>
           </DialogContent>
