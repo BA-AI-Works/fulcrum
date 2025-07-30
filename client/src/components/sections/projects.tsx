@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogOverlay } from "@/components/ui/dialog";
 
 const projects = [
   {
@@ -170,76 +169,92 @@ export default function Projects() {
           </Button>
         </div>
 
-        {/* Project Details Dialog */}
-        <Dialog open={selectedProject !== null} onOpenChange={(open) => {
-          if (!open) {
-            setSelectedProject(null);
-          }
-        }}>
-          <DialogContent className="max-w-5xl max-h-[90vh] p-0 relative">
-            {/* Navigation Arrows - Outside the dialog */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={prevProject}
-              className="absolute -left-16 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-4 shadow-lg text-fulcrum-red hover:bg-fulcrum-red hover:text-white transition-all duration-300 z-50"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </Button>
+        {/* Project Details Modal */}
+        {selectedProject !== null && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center">
+            {/* Backdrop */}
+            <div 
+              className="absolute inset-0 bg-black/80"
+              onClick={() => setSelectedProject(null)}
+            />
             
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={nextProject}
-              className="absolute -right-16 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-4 shadow-lg text-fulcrum-red hover:bg-fulcrum-red hover:text-white transition-all duration-300 z-50"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </Button>
+            {/* Modal Container */}
+            <div className="relative z-60 w-full max-w-5xl mx-4">
+              {/* Navigation Arrows - Outside the modal */}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={prevProject}
+                className="absolute -left-16 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-4 shadow-lg text-fulcrum-red hover:bg-fulcrum-red hover:text-white transition-all duration-300 z-70"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={nextProject}
+                className="absolute -right-16 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-4 shadow-lg text-fulcrum-red hover:bg-fulcrum-red hover:text-white transition-all duration-300 z-70"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </Button>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
-              {/* Left side - Project Image, Title, Subtitle */}
-              <div className="p-8 flex flex-col">
-                <div className="mb-6">
-                  <img 
-                    src={projects[dialogProjectIndex]?.image} 
-                    alt={projects[dialogProjectIndex]?.title}
-                    className="w-full h-64 object-cover rounded-lg mb-6"
-                  />
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold fulcrum-text mb-4">
-                      {projects[dialogProjectIndex]?.title}
-                    </DialogTitle>
-                    <p className="text-gray-600">
-                      {projects[dialogProjectIndex]?.details.subtitle}
-                    </p>
-                  </DialogHeader>
-                </div>
+              {/* Modal Content */}
+              <div className="bg-white rounded-lg shadow-2xl max-h-[90vh] overflow-hidden">
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute right-4 top-4 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <X className="w-5 h-5 text-gray-500 hover:text-gray-700" />
+                </button>
 
-                {/* Project Counter */}
-                <div className="mt-auto text-center">
-                  <span className="text-sm text-gray-500">
-                    {dialogProjectIndex + 1} of {projects.length}
-                  </span>
-                </div>
-              </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+                  {/* Left side - Project Image, Title, Subtitle */}
+                  <div className="p-8 flex flex-col">
+                    <div className="mb-6">
+                      <img 
+                        src={projects[dialogProjectIndex]?.image} 
+                        alt={projects[dialogProjectIndex]?.title}
+                        className="w-full h-64 object-cover rounded-lg mb-6"
+                      />
+                      <div>
+                        <h2 className="text-2xl font-bold fulcrum-text mb-4">
+                          {projects[dialogProjectIndex]?.title}
+                        </h2>
+                        <p className="text-gray-600">
+                          {projects[dialogProjectIndex]?.details.subtitle}
+                        </p>
+                      </div>
+                    </div>
 
-              {/* Right side - Scope */}
-              <div className="p-8 overflow-y-auto max-h-[90vh] bg-gray-50">
-                <div>
-                  <h4 className="text-xl font-semibold fulcrum-red mb-6">Scope:</h4>
-                  <ul className="space-y-4">
-                    {projects[dialogProjectIndex]?.details.scope.map((item, index) => (
-                      <li key={index} className="text-gray-700 flex items-start leading-relaxed">
-                        <span className="fulcrum-red mr-3 mt-1.5 text-sm">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    {/* Project Counter */}
+                    <div className="mt-auto text-center">
+                      <span className="text-sm text-gray-500">
+                        {dialogProjectIndex + 1} of {projects.length}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Right side - Scope */}
+                  <div className="p-8 overflow-y-auto max-h-[90vh] bg-gray-50">
+                    <div>
+                      <h4 className="text-xl font-semibold fulcrum-red mb-6">Scope:</h4>
+                      <ul className="space-y-4">
+                        {projects[dialogProjectIndex]?.details.scope.map((item, index) => (
+                          <li key={index} className="text-gray-700 flex items-start leading-relaxed">
+                            <span className="fulcrum-red mr-3 mt-1.5 text-sm">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </DialogContent>
-        </Dialog>
+          </div>
+        )}
       </div>
     </section>
   );
