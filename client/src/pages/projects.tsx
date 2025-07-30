@@ -367,12 +367,7 @@ export default function ProjectsPage() {
                     </div>
                   </div>
 
-                  {/* Project Counter */}
-                  <div className="text-center mt-4">
-                    <span className="text-sm text-gray-500">
-                      {dialogProjectIndex + 1} of {projects.length}
-                    </span>
-                  </div>
+
                 </div>
 
                 {/* Right side - Scope */}
@@ -402,7 +397,7 @@ export default function ProjectsPage() {
             <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
               <div className="bg-white px-4 py-2 rounded-full shadow-lg">
                 <span className="text-sm text-gray-500">
-                  {selectedProject + 1} of {projects.length}
+                  {dialogProjectIndex + 1} of {projects.length}
                 </span>
               </div>
             </div>
