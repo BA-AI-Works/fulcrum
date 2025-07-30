@@ -234,7 +234,7 @@ const infrastructureCategories = [
 
 export default function AIInfrastructure() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20" style={{ backgroundColor: '#F9FAFB' }}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold fulcrum-text mb-6">Our AI Infrastructure Ecosystem</h2>
@@ -247,7 +247,7 @@ export default function AIInfrastructure() {
           {infrastructureCategories.map((category, index) => (
             <div key={index} className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-800 text-center">{category.title}</h3>
-              <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
                 {category.tools.map((tool, toolIndex) => (
                   <div key={toolIndex} className="w-full">
                     {tool.logo}
