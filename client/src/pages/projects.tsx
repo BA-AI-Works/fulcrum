@@ -221,7 +221,7 @@ export default function ProjectsPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
       {/* Header */}
-      <div className="bg-gray-50 pt-32 pb-20">
+      <div className="bg-gray-50 pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold fulcrum-text mb-6">
@@ -238,24 +238,11 @@ export default function ProjectsPage() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="space-y-12">
           {projects.map((project, index) => (
-            <div 
+            <Card 
               key={index}
-              className="relative"
-              style={{ 
-                backgroundColor: index % 2 === 0 ? '#FFFFFF' : '#F9FAFB',
-                padding: '2rem',
-                borderRadius: '1rem'
-              }}
+              className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer"
+              onClick={() => openProjectDialog(index)}
             >
-              {/* Project Number */}
-              <div className="text-sm font-semibold text-gray-500 mb-4">
-                Project {index + 1}
-              </div>
-              
-              <Card 
-                className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer bg-transparent border-0 shadow-none"
-                onClick={() => openProjectDialog(index)}
-              >
               <div className="grid grid-cols-1 lg:grid-cols-2 h-[600px]">
                 {/* Left side - Project Image, Title, Subtitle */}
                 <div className="p-8 flex flex-col h-full">
@@ -315,7 +302,6 @@ export default function ProjectsPage() {
                 </div>
               </div>
             </Card>
-            </div>
           ))}
         </div>
       </div>
