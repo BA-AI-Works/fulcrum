@@ -235,33 +235,43 @@ export default function ProjectsPage() {
       </div>
 
       {/* Projects List */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="space-y-12">
-          {projects.map((project, index) => (
-            <Card 
-              key={index}
-              className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer"
-              onClick={() => openProjectDialog(index)}
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-2 h-[600px]">
-                {/* Left side - Project Image, Title, Subtitle */}
-                <div className="p-8 flex flex-col h-full">
-                  <div className="flex-1">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-64 object-cover rounded-lg mb-6"
-                    />
-                    <div>
-                      <h2 className="text-2xl font-bold fulcrum-text mb-4 group-hover:text-fulcrum-red transition-colors duration-300">
-                        {project.title}
-                      </h2>
-                      <p className="text-gray-600 mb-4">
-                        {project.details.subtitle}
-                      </p>
+      <div className="w-full">
+        {projects.map((project, index) => (
+          <div 
+            key={index}
+            className={`w-full py-16 ${index % 2 === 0 ? 'bg-white' : 'bg-[#F9FAFB]'}`}
+          >
+            <div className="max-w-7xl mx-auto px-6">
+              {/* Project Number */}
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-gray-800">
+                  Project {index + 1}
+                </h3>
+              </div>
+              
+              <Card 
+                className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer bg-white"
+                onClick={() => openProjectDialog(index)}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2 h-[600px]">
+                  {/* Left side - Project Image, Title, Subtitle */}
+                  <div className="p-8 flex flex-col h-full">
+                    <div className="flex-1">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-64 object-cover rounded-lg mb-6"
+                      />
+                      <div>
+                        <h2 className="text-2xl font-bold fulcrum-text mb-4 group-hover:text-fulcrum-red transition-colors duration-300">
+                          {project.title}
+                        </h2>
+                        <p className="text-gray-600 mb-4">
+                          {project.details.subtitle}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
                 {/* Right side - Scope */}
                 <div className="bg-gray-50 h-full flex flex-col">
@@ -302,8 +312,9 @@ export default function ProjectsPage() {
                 </div>
               </div>
             </Card>
-          ))}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Project Details Modal */}
