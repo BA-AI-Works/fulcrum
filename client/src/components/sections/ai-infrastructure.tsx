@@ -247,7 +247,7 @@ export default function AIInfrastructure() {
           {infrastructureCategories.map((category, index) => (
             <div key={index} className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-800 text-center">{category.title}</h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className={`grid gap-3 ${category.title === "Sensory Perception" ? "grid-cols-1" : "grid-cols-2"}`}>
                 {category.tools.map((tool, toolIndex) => (
                   <div key={toolIndex} className="w-full">
                     {tool.logo}
