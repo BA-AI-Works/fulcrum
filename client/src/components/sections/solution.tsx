@@ -52,6 +52,15 @@ export default function Solution() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Strategy to Execution Bar */}
+        <div className="flex justify-center mt-16">
+          <div className="bg-white rounded-full px-8 py-4 shadow-lg">
+            <span className="text-lg font-semibold text-gray-700">
+              Our Solution: <span className="font-bold">Strategy</span> <ArrowRight className="inline-block w-5 h-5 mx-2" /> <span className="font-bold">Execution</span>
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );

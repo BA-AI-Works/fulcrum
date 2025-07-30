@@ -39,7 +39,7 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto bg-stone-200 rounded-2xl p-8">
+        <div className="max-w-6xl mx-auto rounded-2xl p-8" style={{ backgroundColor: 'rgb(249, 250, 251)' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
               <div key={index} className="text-center group">
