@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Linkedin } from "lucide-react";
 
 const teamMembers = [
   {
@@ -40,18 +41,23 @@ export default function Team() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {teamMembers.map((member, index) => (
-            <div key={index} className="text-center group">
-              <div className="relative mb-6">
-                <img 
-                  src={member.image} 
-                  alt={`${member.name} - Leadership team member`}
-                  className="w-32 h-32 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-all duration-300"
-                />
-              </div>
-              <h3 className="text-xl font-bold fulcrum-text mb-2">{member.name}</h3>
-              <p className="fulcrum-red font-semibold mb-3">{member.title}</p>
-              <p className="text-gray-600 text-sm">{member.bio}</p>
-            </div>
+            <Card key={index} className="text-center group hover:shadow-lg transition-all duration-300 border-2 border-gray-200 hover:border-fulcrum-red">
+              <CardContent className="p-6">
+                <div className="relative mb-6 mx-auto w-40 h-40">
+                  <img 
+                    src={member.image} 
+                    alt={`${member.name} - Leadership team member`}
+                    className="w-full h-full rounded-lg object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 rounded-lg transition-all duration-300 flex items-center justify-center">
+                    <Linkedin className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold fulcrum-text mb-2">{member.name}</h3>
+                <p className="fulcrum-red font-semibold mb-3 text-sm">{member.title}</p>
+                <p className="text-gray-600 text-xs leading-relaxed">{member.bio}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Lock } from "lucide-react";
 
 export default function ModularProof() {
   return (
@@ -22,9 +23,9 @@ export default function ModularProof() {
           </div>
           <div className="order-first lg:order-last">
             <img 
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
               alt="Team collaborating on AI implementation" 
-              className="rounded-xl shadow-lg w-full h-auto"
+              className="rounded-xl shadow-lg w-full h-64 object-cover"
             />
           </div>
         </div>
@@ -33,9 +34,9 @@ export default function ModularProof() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto mb-12">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
               alt="Human-AI collaboration dashboard interface" 
-              className="rounded-xl shadow-lg w-full h-auto"
+              className="rounded-xl shadow-lg w-full h-64 object-cover"
             />
           </div>
           <div>
@@ -54,7 +55,12 @@ export default function ModularProof() {
           <Card className="hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-fulcrum-red">
             <CardContent className="p-8 text-center">
               <h3 className="text-xl font-bold fulcrum-text mb-4">Will I share my data with 3rd parties?</h3>
-              <p className="text-gray-600 leading-relaxed"><strong>Data Privacy</strong> — You can keep your data locally and do not share</p>
+              <p className="text-gray-600 leading-relaxed">
+                <span className="inline-flex items-center gap-2">
+                  <Lock className="w-4 h-4" />
+                  <strong>Data Privacy</strong>
+                </span> — You can keep your data locally and do not share
+              </p>
             </CardContent>
           </Card>
         </div>

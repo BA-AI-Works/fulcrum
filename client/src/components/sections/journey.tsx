@@ -68,9 +68,9 @@ export default function Journey() {
           const windowHeight = window.innerHeight;
           const cardCenter = rect.top + rect.height / 2;
           
-          // Start animation when card is 80% visible from bottom
-          const animationStart = windowHeight * 0.8;
-          const animationEnd = windowHeight * 0.2;
+          // Start animation when card is 90% visible from bottom
+          const animationStart = windowHeight * 0.9;
+          const animationEnd = windowHeight * 0.1;
           
           if (cardCenter <= animationStart && cardCenter >= animationEnd) {
             // Card is in animation range - calculate progress (0 to 1)
@@ -137,8 +137,8 @@ export default function Journey() {
                   <div 
                     className="flex-1 transition-all duration-700 ease-out"
                     style={{
-                      transform: `translateY(${50 - (cardAnimations[step.id] || 0) * 50}px)`,
-                      opacity: 0.3 + (cardAnimations[step.id] || 0) * 0.7
+                      transform: `translateY(${30 - (cardAnimations[step.id] || 0) * 30}px)`,
+                      opacity: 0.6 + (cardAnimations[step.id] || 0) * 0.4
                     }}
                   >
                     <Card 
