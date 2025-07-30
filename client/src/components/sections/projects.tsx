@@ -200,7 +200,7 @@ export default function Projects() {
               </Button>
 
               {/* Modal Content */}
-              <div className="bg-white rounded-lg shadow-2xl max-h-[90vh] overflow-hidden">
+              <div className="bg-white rounded-lg shadow-2xl h-[80vh] overflow-hidden">
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedProject(null)}
@@ -211,8 +211,8 @@ export default function Projects() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
                   {/* Left side - Project Image, Title, Subtitle */}
-                  <div className="p-8 flex flex-col">
-                    <div className="mb-6">
+                  <div className="p-8 flex flex-col h-full">
+                    <div className="flex-1">
                       <img 
                         src={projects[dialogProjectIndex]?.image} 
                         alt={projects[dialogProjectIndex]?.title}
@@ -229,7 +229,7 @@ export default function Projects() {
                     </div>
 
                     {/* Project Counter */}
-                    <div className="mt-auto text-center">
+                    <div className="text-center mt-4">
                       <span className="text-sm text-gray-500">
                         {dialogProjectIndex + 1} of {projects.length}
                       </span>
@@ -237,9 +237,11 @@ export default function Projects() {
                   </div>
 
                   {/* Right side - Scope */}
-                  <div className="p-8 overflow-y-auto max-h-[90vh] bg-gray-50">
-                    <div>
+                  <div className="bg-gray-50 h-full flex flex-col">
+                    <div className="p-8 pb-4">
                       <h4 className="text-xl font-semibold fulcrum-red mb-6">Scope:</h4>
+                    </div>
+                    <div className="flex-1 overflow-y-auto px-8 pb-8">
                       <ul className="space-y-4">
                         {projects[dialogProjectIndex]?.details.scope.map((item, index) => (
                           <li key={index} className="text-gray-700 flex items-start leading-relaxed">

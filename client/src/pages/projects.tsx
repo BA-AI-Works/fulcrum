@@ -16,12 +16,43 @@ interface Project {
   details: ProjectDetails;
 }
 
-const projects: Project[] = [
+const projects = [
   {
-    id: 1,
+    title: "AI-Powered Learning Experience Design for a Leading Learning Solutions Provider",
+    description: "Client is a leading AI trainings company aiming to build an intelligent, end-to-end learning platform.",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    details: {
+      subtitle: "Client is a leading AI trainings company aiming to build an intelligent, end-to-end learning platform. The objective was to design an AI-powered LMS that could autonomously detect individual learning needs and manage the entire learning journey.",
+      scope: [
+        "Defined the end-to-end learning experience vision and the role of AI across user touchpoints",
+        "Designed the decision architecture to assess employee skill gaps, learning history, and role-specific needs",
+        "Developed a recommendation engine logic to match users with tailored content, learning paths and programs",
+        "Created a modular, user-centered interface structure for discovery, planning, purchasing, and continuous learning",
+        "Integrated feedback loops to refine suggestions based on learning outcomes and behavioral data",
+        "Delivered product blueprint, user flows, and experience principles to guide future development phases"
+      ]
+    }
+  },
+  {
+    title: "AI-Based Talent Matching Engine for an IT Outsourcing Company",
+    description: "Efficiently match CVs to job openings with contextual analysis for streamlined recruitment processes.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    details: {
+      subtitle: "Client is an IT outsourcing services provider aiming to optimize its talent placement processes. The objective was to design an AI-powered matching engine that could efficiently analyze incoming CVs and match them to open roles based on relevance and fit.",
+      scope: [
+        "Defined the end-to-end use case, from CV intake to job-role matching, in alignment with internal recruitment workflows",
+        "Designed the matching algorithm logic to assess skills, experience, and contextual indicators in both candidate profiles and open positions",
+        "Developed a scoring model to prioritize fit between applicants and roles, enabling faster and more accurate placement decisions",
+        "Integrated human-in-the-loop mechanisms to validate model outputs and fine-tune learning over time",
+        "Delivered user flows and interface guidelines for recruiters to review, compare, and act on AI-generated matches",
+        "Designed the data architecture to support scalability and performance"
+      ]
+    }
+  },
+  {
     title: "AI Strategy Dev. & Intelligent Sales Platform Implementation for a Leading Food Distributor",
-    description: "Client is a regional B2B food distribution company, leader in frozen food distribution, distributing food to primarily hotels, restaurants and cafes",
-    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800",
+    description: "Designed & deployed intelligent quotation/order flows with comprehensive AI strategy development.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     details: {
       subtitle: "Client is a regional B2B food distribution company, leader in frozen food distribution, distributing food to primarily hotels, restaurants and cafes",
       scope: [
@@ -37,59 +68,18 @@ const projects: Project[] = [
     }
   },
   {
-    id: 2,
-    title: "Digital Transformation & AI Integration for Manufacturing Excellence",
-    description: "Comprehensive digital transformation project for a leading automotive parts manufacturer, focusing on production optimization and quality control",
-    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800",
+    title: "AI Agent for Marketing Automation and Intelligence",
+    description: "SEO optimization, content publishing, and multilingual conversational agents for enhanced marketing intelligence.",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     details: {
-      subtitle: "Comprehensive digital transformation project for a leading automotive parts manufacturer, focusing on production optimization and quality control",
+      subtitle: "The client wanted to streamline marketing operations - ranging from customer support to content publishing, performance analysis, and SEO/AIEO optimization - across multiple languages and social media platforms",
       scope: [
-        "Conducted comprehensive digital readiness assessment",
-        "Designed AI-powered predictive maintenance system",
-        "Implemented real-time production monitoring dashboard",
-        "Developed quality control automation using computer vision",
-        "Created data integration layer for legacy systems",
-        "Established AI governance framework",
-        "Delivered comprehensive training programs",
-        "Ongoing support and optimization"
-      ]
-    }
-  },
-  {
-    id: 3,
-    title: "Smart Healthcare Analytics Platform for Regional Hospital Network",
-    description: "Advanced analytics and AI implementation for a regional hospital network to improve patient outcomes and operational efficiency",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800",
-    details: {
-      subtitle: "Advanced analytics and AI implementation for a regional hospital network to improve patient outcomes and operational efficiency",
-      scope: [
-        "Analyzed existing healthcare data infrastructure",
-        "Designed patient flow optimization algorithms",
-        "Implemented predictive analytics for resource planning",
-        "Created real-time clinical decision support system",
-        "Developed patient risk stratification models",
-        "Established HIPAA-compliant data governance",
-        "Integrated with existing EMR systems",
-        "Delivered clinical staff training programs"
-      ]
-    }
-  },
-  {
-    id: 4,
-    title: "Financial Services AI Modernization Initiative",
-    description: "Complete AI strategy and implementation for a mid-size financial services firm focusing on risk management and customer experience",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-    details: {
-      subtitle: "Complete AI strategy and implementation for a mid-size financial services firm focusing on risk management and customer experience",
-      scope: [
-        "Conducted regulatory compliance assessment",
-        "Designed AI-powered fraud detection system",
-        "Implemented intelligent customer service chatbot",
-        "Created personalized investment recommendation engine",
-        "Developed real-time risk monitoring dashboard",
-        "Established model governance and validation framework",
-        "Integrated with core banking systems",
-        "Ongoing model performance monitoring"
+        "Built multilingual conversational agents integrated into WhatsApp and Telegram to provide automated, accurate product support with live-agent fallback",
+        "Developed an AI-assisted publishing agent to manage multi-channel content scheduling and distribution, ensuring platform compatibility and format validation",
+        "Embedded planning intelligence to optimize content calendars and surface actionable recommendations based on content gaps and posting rhythm",
+        "Created a performance analytics agent that interprets channel data and generates weekly insights on content impact, trends, and engagement patterns",
+        "Implemented a dual-mode SEO/AIEO agent that assesses content visibility for both search engines and LLMs (e.g., ChatGPT), and delivers GPT-powered improvement suggestions",
+        "Integrated human-in-the-loop checkpoints for editorial oversight, transparency, and strategic control"
       ]
     }
   }
@@ -137,35 +127,44 @@ export default function ProjectsPage() {
         <div className="space-y-12">
           {projects.map((project, index) => (
             <Card 
-              key={project.id}
+              key={index}
               className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer"
               onClick={() => openProjectDialog(index)}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
-                {/* Project Image */}
-                <div className="lg:col-span-1">
-                  <div className="h-64 lg:h-full overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 h-[500px]">
+                {/* Left side - Project Image, Title, Subtitle */}
+                <div className="p-8 flex flex-col h-full">
+                  <div className="flex-1">
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-64 object-cover rounded-lg mb-6"
                     />
+                    <div>
+                      <h2 className="text-2xl font-bold fulcrum-text mb-4 group-hover:text-fulcrum-red transition-colors duration-300">
+                        {project.title}
+                      </h2>
+                      <p className="text-gray-600">
+                        {project.details.subtitle}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Project Content */}
-                <div className="lg:col-span-2 p-8 flex flex-col justify-center">
-                  <div>
-                    <h3 className="text-2xl font-bold fulcrum-text mb-4 group-hover:text-fulcrum-red transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed mb-6">
-                      {project.description}
-                    </p>
-                    <div className="flex items-center text-fulcrum-red font-semibold group-hover:underline">
-                      <span>View Project Details</span>
-                      <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
+                {/* Right side - Scope */}
+                <div className="bg-gray-50 h-full flex flex-col">
+                  <div className="p-8 pb-4">
+                    <h4 className="text-xl font-semibold fulcrum-red mb-6">Scope:</h4>
+                  </div>
+                  <div className="flex-1 overflow-y-auto px-8 pb-8">
+                    <ul className="space-y-4">
+                      {project.details.scope.map((item, scopeIndex) => (
+                        <li key={scopeIndex} className="text-gray-700 flex items-start leading-relaxed">
+                          <span className="fulcrum-red mr-3 mt-1.5 text-sm">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -207,7 +206,7 @@ export default function ProjectsPage() {
             </Button>
 
             {/* Modal Content */}
-            <div className="bg-white rounded-lg shadow-2xl max-h-[90vh] overflow-hidden">
+            <div className="bg-white rounded-lg shadow-2xl h-[80vh] overflow-hidden">
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProject(null)}
@@ -218,8 +217,8 @@ export default function ProjectsPage() {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
                 {/* Left side - Project Image, Title, Subtitle */}
-                <div className="p-8 flex flex-col">
-                  <div className="mb-6">
+                <div className="p-8 flex flex-col h-full">
+                  <div className="flex-1">
                     <img 
                       src={projects[dialogProjectIndex]?.image} 
                       alt={projects[dialogProjectIndex]?.title}
@@ -236,7 +235,7 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Project Counter */}
-                  <div className="mt-auto text-center">
+                  <div className="text-center mt-4">
                     <span className="text-sm text-gray-500">
                       {dialogProjectIndex + 1} of {projects.length}
                     </span>
@@ -244,9 +243,11 @@ export default function ProjectsPage() {
                 </div>
 
                 {/* Right side - Scope */}
-                <div className="p-8 overflow-y-auto max-h-[90vh] bg-gray-50">
-                  <div>
+                <div className="bg-gray-50 h-full flex flex-col">
+                  <div className="p-8 pb-4">
                     <h4 className="text-xl font-semibold fulcrum-red mb-6">Scope:</h4>
+                  </div>
+                  <div className="flex-1 overflow-y-auto px-8 pb-8">
                     <ul className="space-y-4">
                       {projects[dialogProjectIndex]?.details.scope.map((item, index) => (
                         <li key={index} className="text-gray-700 flex items-start leading-relaxed">
