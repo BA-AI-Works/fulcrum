@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { X } from "lucide-react";
+import { X, Check } from "lucide-react";
 
 interface JourneyStep {
   id: number;
@@ -107,6 +107,30 @@ const stepDetails: Record<number, StepDetail> = {
       "Operational AI Models"
     ]
   }
+};
+
+const getDeliverableDescription = (stepId: number, deliverableIndex: number): string => {
+  const descriptions: Record<number, string[]> = {
+    1: [
+      "Comprehensive analysis identifying specific business areas where AI can create measurable value and competitive advantage.",
+      "Clear, quantifiable metrics to track AI implementation success and ROI across your organization."
+    ],
+    2: [
+      "Detailed evaluation of your organization's current AI readiness across technology, data, and cultural dimensions.",
+      "Strategic ranking of business processes based on AI impact potential, implementation feasibility, and business value.",
+      "Comprehensive timeline and implementation strategy for AI process automation across your organization."
+    ],
+    3: [
+      "Detailed process blueprints showing optimized workflows with integrated AI technologies for maximum efficiency.",
+      "Complete framework defining roles, responsibilities, and decision-making processes for AI governance and oversight."
+    ],
+    4: [
+      "Comprehensive training programs ensuring your team can effectively leverage new AI-powered systems and processes.",
+      "Fully deployed, tested, and validated AI models integrated into your business operations and ready for production use."
+    ]
+  };
+  
+  return descriptions[stepId]?.[deliverableIndex] || "Strategic implementation guidance tailored to your business needs.";
 };
 
 export default function Journey() {
@@ -286,36 +310,59 @@ export default function Journey() {
                 <X className="w-5 h-5" />
               </button>
               
-              <div className="p-8">
-                <h2 className="text-3xl font-bold fulcrum-text mb-6">
-                  {stepDetails[selectedStepDetail]?.title}
-                </h2>
+              <div className="p-0 overflow-y-auto" style={{ maxHeight: "90vh" }}>
+                {/* Header */}
+                <div className="p-8 pb-6 border-b border-gray-100">
+                  <h2 className="text-3xl font-bold fulcrum-text text-center">
+                    {stepDetails[selectedStepDetail]?.title}
+                  </h2>
+                </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Activities */}
-                  <div>
-                    <h3 className="text-xl font-semibold fulcrum-red mb-4">Activities</h3>
-                    <ul className="space-y-3">
+                {/* Two Column Layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+                  {/* Left Column - Activities */}
+                  <div className="p-8 bg-gray-50">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Activities</h3>
+                    <div className="space-y-6">
                       {stepDetails[selectedStepDetail]?.activities.map((activity, index) => (
-                        <li key={index} className="text-gray-700 flex items-start leading-relaxed">
-                          <span className="fulcrum-red mr-3 mt-1.5 text-sm">▪</span>
-                          <span>{activity}</span>
-                        </li>
+                        <div key={index} className="flex items-start space-x-4">
+                          <div className="mt-1 flex-shrink-0">
+                            <div className="w-6 h-6 rounded-full bg-gray-400 flex items-center justify-center">
+                              <Check className="w-4 h-4 text-white" />
+                            </div>
+                          </div>
+                          <div>
+                            <p className="text-gray-700 leading-relaxed font-medium">
+                              {activity}
+                            </p>
+                          </div>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                   
-                  {/* Deliverables */}
-                  <div>
-                    <h3 className="text-xl font-semibold fulcrum-red mb-4">Deliverables</h3>
-                    <ul className="space-y-3">
+                  {/* Right Column - Deliverables */}
+                  <div className="p-8 bg-white">
+                    <h3 className="text-2xl font-bold fulcrum-text mb-8 text-center">With Fulcrum</h3>
+                    <div className="space-y-6">
                       {stepDetails[selectedStepDetail]?.deliverables.map((deliverable, index) => (
-                        <li key={index} className="text-gray-700 flex items-start leading-relaxed">
-                          <span className="fulcrum-red mr-3 mt-1.5 text-sm">▪</span>
-                          <span>{deliverable}</span>
-                        </li>
+                        <div key={index} className="flex items-start space-x-4">
+                          <div className="mt-1 flex-shrink-0">
+                            <div className="w-6 h-6 rounded-full bg-fulcrum-red flex items-center justify-center">
+                              <Check className="w-4 h-4 text-white" />
+                            </div>
+                          </div>
+                          <div>
+                            <h4 className="text-gray-800 font-semibold mb-2 leading-relaxed">
+                              {deliverable}
+                            </h4>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                              {getDeliverableDescription(selectedStepDetail, index)}
+                            </p>
+                          </div>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </div>
               </div>
