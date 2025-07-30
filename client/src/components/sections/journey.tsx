@@ -343,7 +343,7 @@ export default function Journey() {
                   
                   {/* Right Column - Deliverables */}
                   <div className="p-8 bg-white">
-                    <h3 className="text-2xl font-bold fulcrum-text mb-8 text-center">With Fulcrum</h3>
+                    <h3 className="text-2xl font-bold fulcrum-text mb-8 text-center">Deliverables</h3>
                     <div className="space-y-6">
                       {stepDetails[selectedStepDetail]?.deliverables.map((deliverable, index) => (
                         <div key={index} className="flex items-start space-x-4">
