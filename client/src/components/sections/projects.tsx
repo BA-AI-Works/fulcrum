@@ -148,7 +148,7 @@ const projects = [
   {
     title: "Global Engagement on Emerging Technologies for a Pharmaceutical Company",
     description: "Client is a global pharmaceutical company seeking to explore the role of AI and other emerging technologies in the future of pharma. We facilitated a strategic program bringing together medical experts from across the world to co-develop insights and use cases",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     tags: ["Emerging Technologies", "Pharmaceutical", "Global Strategy", "Healthcare AI"],
     details: {
       subtitle: "Client is a global pharmaceutical company seeking to explore the role of AI and other emerging technologies in the future of pharma. We facilitated a strategic program bringing together medical experts from across the world to co-develop insights and use cases",
@@ -359,9 +359,9 @@ export default function Projects() {
                       </div>
                     </div>
                     
-                    {/* Tags - Below scope, aligned to right */}
+                    {/* Tags - Below scope items, left aligned */}
                     <div className="px-8 pb-6">
-                      <div className="flex flex-wrap gap-2 justify-end">
+                      <div className="flex flex-wrap gap-2">
                         {projects[dialogProjectIndex]?.tags.map((tag, index) => (
                           <span 
                             key={index}
@@ -381,13 +381,15 @@ export default function Projects() {
                 </div>
               </div>
               
-              {/* Project Counter - Outside modal */}
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
-                <div className="bg-white px-4 py-2 rounded-full shadow-lg">
-                  <span className="text-sm text-gray-500">
-                    {selectedProject + 1} of {projects.length}
-                  </span>
-                </div>
+
+            </div>
+            
+            {/* Project Counter - Outside modal */}
+            <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
+              <div className="bg-white px-4 py-2 rounded-full shadow-lg">
+                <span className="text-sm text-gray-500">
+                  {dialogProjectIndex + 1} of {projects.length}
+                </span>
               </div>
             </div>
           </div>

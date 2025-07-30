@@ -280,9 +280,9 @@ export default function ProjectsPage() {
                       </ul>
                     </div>
                     
-                    {/* Tags - Below scope, aligned to right */}
+                    {/* Tags - Below scope items, left aligned */}
                     <div className="px-8 pb-6">
-                      <div className="flex flex-wrap gap-2 justify-end">
+                      <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, tagIndex) => (
                           <span 
                             key={tagIndex}
@@ -395,13 +395,15 @@ export default function ProjectsPage() {
                 </div>
               </div>
               
-              {/* Project Counter - Outside modal */}
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
-                <div className="bg-white px-4 py-2 rounded-full shadow-lg">
-                  <span className="text-sm text-gray-500">
-                    {selectedProject + 1} of {projects.length}
-                  </span>
-                </div>
+
+            </div>
+            
+            {/* Project Counter - Outside modal */}
+            <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
+              <div className="bg-white px-4 py-2 rounded-full shadow-lg">
+                <span className="text-sm text-gray-500">
+                  {selectedProject + 1} of {projects.length}
+                </span>
               </div>
             </div>
           </div>

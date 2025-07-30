@@ -159,7 +159,7 @@ export default function Journey() {
                             {step.stepLabel}
                           </span>
                         </div>
-                        <div className="mt-8">
+                        <div>
                           <h3 className="text-2xl font-bold fulcrum-text mb-4">
                             {step.title}
                           </h3>
