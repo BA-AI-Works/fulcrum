@@ -221,7 +221,7 @@ export default function ProjectsPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
       {/* Header */}
-      <div className="bg-gray-50 py-16">
+      <div className="bg-gray-50 pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold fulcrum-text mb-6">

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 const projects = [
   {
@@ -199,7 +200,7 @@ export default function Projects() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 5000);
+    }, 6000); // Increased from 5000ms to 6000ms for smoother transitions
 
     return () => clearInterval(interval);
   }, [currentIndex]);
@@ -230,7 +231,7 @@ export default function Projects() {
         </div>
 
         <div className="relative max-w-6xl mx-auto px-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-700 ease-in-out">
             {visibleProjects.map((project, index) => (
               <Card 
                 key={currentIndex * 2 + index} 
@@ -271,20 +272,15 @@ export default function Projects() {
             <ChevronRight className="w-5 h-5" />
           </Button>
           
-          {/* Project Counter - Below carousel */}
-          <div className="text-center mt-8">
-            <div className="inline-block bg-white px-4 py-2 rounded-full shadow-lg">
-              <span className="text-sm text-gray-500">
-                {currentIndex + 1} of {totalSlides}
-              </span>
-            </div>
-          </div>
+
         </div>
 
         <div className="text-center mt-12">
-          <Button className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
-            See All Projects
-          </Button>
+          <Link href="/projects">
+            <Button className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+              See All Projects
+            </Button>
+          </Link>
         </div>
 
         {/* Project Details Modal */}
