@@ -270,6 +270,15 @@ export default function Projects() {
           >
             <ChevronRight className="w-5 h-5" />
           </Button>
+          
+          {/* Project Counter - Below carousel */}
+          <div className="text-center mt-8">
+            <div className="inline-block bg-white px-4 py-2 rounded-full shadow-lg">
+              <span className="text-sm text-gray-500">
+                {currentIndex + 1} of {totalSlides}
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="text-center mt-12">
@@ -356,25 +365,25 @@ export default function Projects() {
                             </li>
                           ))}
                         </ul>
-                      </div>
-                    </div>
-                    
-                    {/* Tags - Below scope items, left aligned */}
-                    <div className="px-8 pb-6">
-                      <div className="flex flex-wrap gap-2">
-                        {projects[dialogProjectIndex]?.tags.map((tag, index) => (
-                          <span 
-                            key={index}
-                            className="px-3 py-1 text-sm rounded-full border"
-                            style={{ 
-                              borderColor: '#7A0000',
-                              color: '#7A0000',
-                              backgroundColor: 'rgba(122, 0, 0, 0.05)'
-                            }}
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                        
+                        {/* Tags - Below scope items, left aligned */}
+                        <div className="mt-6">
+                          <div className="flex flex-wrap gap-2">
+                            {projects[dialogProjectIndex]?.tags.map((tag, index) => (
+                              <span 
+                                key={index}
+                                className="px-3 py-1 text-sm rounded-full border"
+                                style={{ 
+                                  borderColor: '#7A0000',
+                                  color: '#7A0000',
+                                  backgroundColor: 'rgba(122, 0, 0, 0.05)'
+                                }}
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

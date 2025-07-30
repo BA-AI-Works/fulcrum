@@ -278,24 +278,24 @@ export default function ProjectsPage() {
                           </li>
                         ))}
                       </ul>
-                    </div>
-                    
-                    {/* Tags - Below scope items, left aligned */}
-                    <div className="px-8 pb-6">
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag, tagIndex) => (
-                          <span 
-                            key={tagIndex}
-                            className="px-3 py-1 text-sm rounded-full border"
-                            style={{ 
-                              borderColor: '#7A0000',
-                              color: '#7A0000',
-                              backgroundColor: 'rgba(122, 0, 0, 0.05)'
-                            }}
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                      
+                      {/* Tags - Below scope items, left aligned */}
+                      <div className="mt-6">
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag, tagIndex) => (
+                            <span 
+                              key={tagIndex}
+                              className="px-3 py-1 text-sm rounded-full border"
+                              style={{ 
+                                borderColor: '#7A0000',
+                                color: '#7A0000',
+                                backgroundColor: 'rgba(122, 0, 0, 0.05)'
+                              }}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
