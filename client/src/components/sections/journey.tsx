@@ -6,6 +6,7 @@ interface JourneyStep {
   stepLabel: string;
   title: string;
   description: string;
+  buttonText: string;
 }
 
 const journeySteps: JourneyStep[] = [
@@ -13,25 +14,29 @@ const journeySteps: JourneyStep[] = [
     id: 1,
     stepLabel: "1st step",
     title: "What business priorities can AI serve?",
-    description: "What is my business strategy and goals? Which business metrics do I want to improve? Which areas can I benefit from AI the most to realize my business objectives?"
+    description: "What is my business strategy and goals? Which business metrics do I want to improve? Which areas can I benefit from AI the most to realize my business objectives?",
+    buttonText: "Uncover AI Value"
   },
   {
     id: 2,
     stepLabel: "2nd step", 
     title: "Where will I use it?",
-    description: "Is my infrastructure capable of delivering what AI-powered intelligent processes demand? How ready is my culture to embrace AI? Which processes should I prioritize?"
+    description: "Is my infrastructure capable of delivering what AI-powered intelligent processes demand? How ready is my culture to embrace AI? Which processes should I prioritize?",
+    buttonText: "Scan for Readiness"
   },
   {
     id: 3,
     stepLabel: "3rd step",
     title: "How will I use it?",
-    description: "What can I improve in the prioritized processes? What AI tools are relevant to further enrich intelligent business processes? How will I integrate AI to my existing infrastructure?"
+    description: "What can I improve in the prioritized processes? What AI tools are relevant to further enrich intelligent business processes? How will I integrate AI to my existing infrastructure?",
+    buttonText: "Design Workflows"
   },
   {
     id: 4,
     stepLabel: "4th step",
     title: "I use it!",
-    description: "Implement AI powered intelligent business processes and train end-users to maximize the transformation impact across your organization."
+    description: "Implement AI powered intelligent business processes and train end-users to maximize the transformation impact across your organization.",
+    buttonText: "Launch Your Solution"
   }
 ];
 
@@ -157,9 +162,18 @@ export default function Journey() {
                         <h3 className="text-2xl font-bold fulcrum-text mb-4">
                           {step.title}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-600 leading-relaxed mb-6">
                           {step.description}
                         </p>
+                        <button 
+                          className="px-6 py-3 rounded-lg border-2 transition-all duration-300 hover:bg-fulcrum-red hover:text-white"
+                          style={{
+                            borderColor: '#7A0000',
+                            color: '#7A0000'
+                          }}
+                        >
+                          {step.buttonText}
+                        </button>
                       </CardContent>
                     </Card>
                   </div>

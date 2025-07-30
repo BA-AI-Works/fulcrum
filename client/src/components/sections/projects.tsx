@@ -113,7 +113,7 @@ const projects = [
   {
     title: "Talent Strategy Design for a Global Pharmaceutical Company",
     description: "Client is a multinational pharmaceutical company looking to strengthen its position as an employer of choice by designing an HR strategy focused on talent attraction, engagement, and a consistent organizational identity",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     tags: ["Talent Strategy", "HR", "Pharmaceutical", "Employer Branding"],
     details: {
       subtitle: "Client is a multinational pharmaceutical company looking to strengthen its position as an employer of choice by designing an HR strategy focused on talent attraction, engagement, and a consistent organizational identity",
@@ -148,7 +148,7 @@ const projects = [
   {
     title: "Global Engagement on Emerging Technologies for a Pharmaceutical Company",
     description: "Client is a global pharmaceutical company seeking to explore the role of AI and other emerging technologies in the future of pharma. We facilitated a strategic program bringing together medical experts from across the world to co-develop insights and use cases",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     tags: ["Emerging Technologies", "Pharmaceutical", "Global Strategy", "Healthcare AI"],
     details: {
       subtitle: "Client is a global pharmaceutical company seeking to explore the role of AI and other emerging technologies in the future of pharma. We facilitated a strategic program bringing together medical experts from across the world to co-develop insights and use cases",
@@ -309,7 +309,7 @@ export default function Projects() {
               </Button>
 
               {/* Modal Content */}
-              <div className="bg-white rounded-lg shadow-2xl h-[80vh] overflow-hidden">
+              <div className="bg-white rounded-lg shadow-2xl h-[85vh] overflow-hidden">
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedProject(null)}
@@ -353,12 +353,7 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    {/* Project Counter */}
-                    <div className="text-center mt-4">
-                      <span className="text-sm text-gray-500">
-                        {dialogProjectIndex + 1} of {projects.length}
-                      </span>
-                    </div>
+
                   </div>
 
                   {/* Right side - Scope */}
@@ -366,7 +361,7 @@ export default function Projects() {
                     <div className="p-8 pb-4">
                       <h4 className="text-xl font-semibold fulcrum-red mb-6">Scope:</h4>
                     </div>
-                    <div className="flex-1 overflow-y-auto px-8 pb-8" style={{ maxHeight: "calc(80vh - 120px)" }}>
+                    <div className="flex-1 overflow-y-auto px-8 pb-8" style={{ maxHeight: "calc(85vh - 120px)" }}>
                       <div className="pr-2"> {/* Add padding for scrollbar */}
                         <ul className="space-y-4">
                           {projects[dialogProjectIndex]?.details.scope.map((item, index) => (
@@ -379,6 +374,15 @@ export default function Projects() {
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+              
+              {/* Project Counter - Outside modal */}
+              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
+                <div className="bg-white px-4 py-2 rounded-full shadow-lg">
+                  <span className="text-sm text-gray-500">
+                    {dialogProjectIndex + 1} of {projects.length}
+                  </span>
                 </div>
               </div>
             </div>
