@@ -280,9 +280,9 @@ export default function ProjectsPage() {
                       </ul>
                     </div>
                     
-                    {/* Tags - Below scope */}
+                    {/* Tags - Below scope, aligned to right */}
                     <div className="px-8 pb-6">
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 justify-end">
                         {project.tags.map((tag, tagIndex) => (
                           <span 
                             key={tagIndex}

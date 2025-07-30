@@ -153,23 +153,33 @@ export default function Journey() {
                           : 'border-2 border-gray-200'
                       }`}
                     >
-                      <CardContent className="p-8">
-                        <div className="mb-4">
-                          <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full mb-4">
+                      <CardContent className="p-8 relative">
+                        <div className="absolute top-4 right-4">
+                          <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">
                             {step.stepLabel}
                           </span>
                         </div>
-                        <h3 className="text-2xl font-bold fulcrum-text mb-4">
-                          {step.title}
-                        </h3>
+                        <div className="mt-8">
+                          <h3 className="text-2xl font-bold fulcrum-text mb-4">
+                            {step.title}
+                          </h3>
+                        </div>
                         <p className="text-gray-600 leading-relaxed mb-6">
                           {step.description}
                         </p>
                         <button 
-                          className="px-6 py-3 rounded-lg border-2 transition-all duration-300 hover:bg-fulcrum-red hover:text-white"
+                          className="px-6 py-3 rounded-lg border-2 transition-all duration-300 hover:text-white"
                           style={{
                             borderColor: '#7A0000',
                             color: '#7A0000'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = '#7A0000';
+                            e.currentTarget.style.color = '#FFFFFF';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                            e.currentTarget.style.color = '#7A0000';
                           }}
                         >
                           {step.buttonText}

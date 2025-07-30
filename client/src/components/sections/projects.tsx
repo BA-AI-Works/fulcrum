@@ -334,22 +334,7 @@ export default function Projects() {
                         <p className="text-gray-600 mb-4">
                           {projects[dialogProjectIndex]?.details.subtitle}
                         </p>
-                        {/* Tags */}
-                        <div className="flex flex-wrap gap-2">
-                          {projects[dialogProjectIndex]?.tags.map((tag, index) => (
-                            <span 
-                              key={index}
-                              className="px-3 py-1 text-sm rounded-full border"
-                              style={{ 
-                                borderColor: '#7A0000',
-                                color: '#7A0000',
-                                backgroundColor: 'rgba(122, 0, 0, 0.05)'
-                              }}
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
+
                       </div>
                     </div>
 
@@ -373,6 +358,25 @@ export default function Projects() {
                         </ul>
                       </div>
                     </div>
+                    
+                    {/* Tags - Below scope, aligned to right */}
+                    <div className="px-8 pb-6">
+                      <div className="flex flex-wrap gap-2 justify-end">
+                        {projects[dialogProjectIndex]?.tags.map((tag, index) => (
+                          <span 
+                            key={index}
+                            className="px-3 py-1 text-sm rounded-full border"
+                            style={{ 
+                              borderColor: '#7A0000',
+                              color: '#7A0000',
+                              backgroundColor: 'rgba(122, 0, 0, 0.05)'
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -381,7 +385,7 @@ export default function Projects() {
               <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
                 <div className="bg-white px-4 py-2 rounded-full shadow-lg">
                   <span className="text-sm text-gray-500">
-                    {dialogProjectIndex + 1} of {projects.length}
+                    {selectedProject + 1} of {projects.length}
                   </span>
                 </div>
               </div>
