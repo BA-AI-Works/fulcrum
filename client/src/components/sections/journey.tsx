@@ -142,7 +142,7 @@ export default function Journey() {
                     }}
                   >
                     <Card 
-                      className={`transition-all duration-300 rounded-2xl ${
+                      className={`transition-all duration-300 rounded-2xl hover:border-fulcrum-red hover:shadow-lg ${
                         activeStep === step.id 
                           ? 'border-2 border-fulcrum-red' 
                           : 'border-2 border-gray-200'

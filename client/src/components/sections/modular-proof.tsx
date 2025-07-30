@@ -9,10 +9,9 @@ export default function ModularProof() {
           <h2 className="text-4xl md:text-5xl font-bold fulcrum-text mb-6">Customizing Your AI Journey</h2>
         </div>
 
-        {/* Module Container */}
-        <div className="max-w-7xl mx-auto bg-white rounded-2xl p-8 shadow-sm mb-16">
-          {/* Module 1 */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        {/* Module 1 Container */}
+        <div className="max-w-7xl mx-auto bg-white rounded-2xl p-8 shadow-sm mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold fulcrum-text mb-4">
                 Will my organization be able to timely adapt to the major change?
@@ -31,8 +30,10 @@ export default function ModularProof() {
               />
             </div>
           </div>
+        </div>
 
-          {/* Module 2 */}
+        {/* Module 2 Container */}
+        <div className="max-w-7xl mx-auto bg-white rounded-2xl p-8 shadow-sm mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
