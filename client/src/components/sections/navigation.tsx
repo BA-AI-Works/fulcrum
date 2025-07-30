@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "wouter";
 import FulcrumLogo from "@/components/fulcrum-logo";
 import { Button } from "@/components/ui/button";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,21 +34,30 @@ export default function Navigation() {
     <nav className={`fixed top-0 left-0 right-0 bg-white z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : 'shadow-sm'}`} style={{ borderBottom: '1px solid #DBDBDB' }}>
       <div className="container mx-auto px-6 py-4 flex items-center justify-center">
         <div className="flex items-center space-x-12">
-          <button 
-            onClick={() => scrollToSection('projects')}
-            className="fulcrum-text hover:text-fulcrum-red transition-colors"
-          >
-            Projects
-          </button>
+          <Link href="/projects">
+            <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
+              Projects
+            </button>
+          </Link>
           
-          <FulcrumLogo />
+          <Link href="/">
+            <FulcrumLogo />
+          </Link>
           
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="fulcrum-text hover:text-fulcrum-red transition-colors"
-          >
-            Contact
-          </button>
+          {location === "/" ? (
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="fulcrum-text hover:text-fulcrum-red transition-colors"
+            >
+              Contact
+            </button>
+          ) : (
+            <Link href="/#contact">
+              <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
+                Contact
+              </button>
+            </Link>
+          )}
         </div>
 
         <Button
@@ -62,18 +73,31 @@ export default function Navigation() {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-fulcrum-gray">
           <div className="px-6 py-4 space-y-3">
-            <button 
-              onClick={() => scrollToSection('projects')}
-              className="block fulcrum-text hover:text-fulcrum-red transition-colors"
-            >
-              Projects
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="block fulcrum-text hover:text-fulcrum-red transition-colors"
-            >
-              Contact
-            </button>
+            <Link href="/projects">
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="block fulcrum-text hover:text-fulcrum-red transition-colors"
+              >
+                Projects
+              </button>
+            </Link>
+            {location === "/" ? (
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="block fulcrum-text hover:text-fulcrum-red transition-colors"
+              >
+                Contact
+              </button>
+            ) : (
+              <Link href="/#contact">
+                <button 
+                  onClick={() => setIsOpen(false)}
+                  className="block fulcrum-text hover:text-fulcrum-red transition-colors"
+                >
+                  Contact
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       )}
