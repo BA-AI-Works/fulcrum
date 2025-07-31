@@ -190,9 +190,7 @@ const blogPosts: BlogPost[] = [
 
 export default function BlogDetailPage() {
   const { id } = useParams<{ id: string }>();
-  console.log('Blog Detail Page - Current ID:', id);
   const post = blogPosts.find(p => p.id === parseInt(id || '1'));
-  console.log('Found post:', post);
   
   if (!post) {
     return (
@@ -298,7 +296,13 @@ export default function BlogDetailPage() {
               .slice(0, 3)
               .map((relatedPost) => (
                 <Link key={relatedPost.id} href={`/blog/${relatedPost.id}`}>
-                  <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
+                  <div 
+                    className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = `/blog/${relatedPost.id}`;
+                    }}
+                  >
                     <div className="aspect-video overflow-hidden relative">
                       <img 
                         src={relatedPost.image} 
