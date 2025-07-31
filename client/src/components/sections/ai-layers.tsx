@@ -107,16 +107,17 @@ export default function AILayers() {
 
         <div className="grid grid-cols-3 gap-8">
           {/* Left Side - Layer Options in Single Column */}
-          <div className="space-y-4">
-            {layerOptions.map((layer) => (
+          <div className="flex flex-col justify-between" style={{height: '336px'}}>
+            {layerOptions.map((layer, index) => (
               <button
                 key={layer.id}
                 onClick={() => setSelectedLayer(layer.id)}
-                className={`w-full p-5 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg h-20 ${
+                className={`w-full p-5 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg ${
                   selectedLayer === layer.id 
                     ? "bg-[#7A0000] text-white border-[#7A0000]" 
                     : "bg-gray-50 border-gray-200 hover:border-gray-300"
                 }`}
+                style={{height: '78px'}}
               >
                 <div className="flex items-center space-x-4 h-full">
                   <div className="w-10 h-10 bg-[#7A0000] rounded-full flex items-center justify-center flex-shrink-0">
@@ -147,10 +148,10 @@ export default function AILayers() {
           </div>
 
           {/* Right Side - Dynamic Content */}
-          <div className="col-span-2 bg-[#F6F7F9] rounded-xl p-8" style={{height: '336px'}}>
-            <div className="grid grid-cols-5 gap-8" style={{height: '272px'}}>
+          <div className="col-span-2 bg-[#F9FAFB] rounded-xl p-4" style={{height: '336px'}}>
+            <div className="grid grid-cols-5 gap-4 h-full">
               {/* Their Transformation Section */}
-              <div className="col-span-2 bg-white rounded-xl p-6 flex flex-col" style={{height: '272px'}}>
+              <div className="col-span-2 bg-white rounded-xl p-6 flex flex-col h-full">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   Their Transformation
                 </h3>
@@ -169,7 +170,7 @@ export default function AILayers() {
               </div>
 
               {/* Journey of Trainings Section */}
-              <div className="col-span-3 bg-white rounded-xl p-6 flex flex-col" style={{height: '272px'}}>
+              <div className="col-span-3 bg-white rounded-xl p-6 flex flex-col h-full">
                 <h3 className="text-lg font-bold text-gray-900 mb-6">
                   Journey of Trainings, Workshops & Seminars
                 </h3>
