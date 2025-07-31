@@ -56,20 +56,11 @@ export default function Navigation() {
             </button>
           </Link>
           
-          {location === "/" ? (
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="fulcrum-text hover:text-fulcrum-red transition-colors"
-            >
+          <Link href="/contact">
+            <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
               Contact
             </button>
-          ) : (
-            <Link href="/#contact">
-              <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
-                Contact
-              </button>
-            </Link>
-          )}
+          </Link>
         </div>
 
         <Button
@@ -109,23 +100,14 @@ export default function Navigation() {
                 Blog
               </button>
             </Link>
-            {location === "/" ? (
+            <Link href="/contact">
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => setIsOpen(false)}
                 className="block fulcrum-text hover:text-fulcrum-red transition-colors"
               >
                 Contact
               </button>
-            ) : (
-              <Link href="/#contact">
-                <button 
-                  onClick={() => setIsOpen(false)}
-                  className="block fulcrum-text hover:text-fulcrum-red transition-colors"
-                >
-                  Contact
-                </button>
-              </Link>
-            )}
+            </Link>
           </div>
         </div>
       )}
