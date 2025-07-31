@@ -39,7 +39,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
 async function getBlogPosts(): Promise<BlogPost[]> {
   try {
-    const articlesDir = path.join(process.cwd(), "articles");
+    // Try production path first (dist/articles), fallback to development path
+    const isProduction = process.env.NODE_ENV === 'production';
+    const articlesDir = isProduction 
+      ? path.join(process.cwd(), "dist", "articles")
+      : path.join(process.cwd(), "articles");
+    
     const files = await fs.readdir(articlesDir);
     const mdFiles = files.filter(file => file.endsWith('.md'));
     
@@ -77,7 +82,13 @@ async function getBlogPosts(): Promise<BlogPost[]> {
 
 async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
-    const filePath = path.join(process.cwd(), "articles", `${slug}.md`);
+    // Try production path first (dist/articles), fallback to development path
+    const isProduction = process.env.NODE_ENV === 'production';
+    const articlesDir = isProduction 
+      ? path.join(process.cwd(), "dist", "articles")
+      : path.join(process.cwd(), "articles");
+    
+    const filePath = path.join(articlesDir, `${slug}.md`);
     const fileContent = await fs.readFile(filePath, 'utf-8');
     const { data, content } = matter(fileContent);
     
