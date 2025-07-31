@@ -215,56 +215,57 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`}>
-              <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer h-full bg-white">
-                <div className="aspect-video overflow-hidden relative">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  {/* Date badge on image */}
-                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-2">
-                    <span className="text-xs font-medium text-gray-700">
-                      {post.date} • {post.readTime}
-                    </span>
-                  </div>
-                </div>
-                <CardContent className="p-6 flex flex-col h-full">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold fulcrum-text mb-3 group-hover:text-fulcrum-red transition-colors duration-300">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">
-                      {post.description}
-                    </p>
-                    
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {post.tags.map((tag, tagIndex) => (
-                        <span 
-                          key={tagIndex}
-                          className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center mt-4 pt-4 border-t border-gray-100">
-                    <div className="flex items-center space-x-3">
-                      <img 
-                        src={post.author.avatar} 
-                        alt={post.author.name}
-                        className="w-8 h-8 rounded-full object-cover"
-                      />
-                      <span className="text-sm font-medium text-gray-700">
-                        {post.author.name}
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer bg-white flex flex-col">
+                  <div className="aspect-video overflow-hidden relative">
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    {/* Date badge on image */}
+                    <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-2">
+                      <span className="text-xs font-medium text-gray-700">
+                        {post.date} • {post.readTime}
                       </span>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold fulcrum-text mb-3 group-hover:text-fulcrum-red transition-colors duration-300">
+                        {post.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        {post.description}
+                      </p>
+                      
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {post.tags.map((tag, tagIndex) => (
+                          <span 
+                            key={tagIndex}
+                            className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Author info - always at bottom */}
+                    <div className="flex items-center pt-4 border-t border-gray-100 mt-auto">
+                      <div className="flex items-center space-x-3">
+                        <img 
+                          src={post.author.avatar} 
+                          alt={post.author.name}
+                          className="w-8 h-8 rounded-full object-cover"
+                        />
+                        <span className="text-sm font-medium text-gray-700">
+                          {post.author.name}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
               </Link>
             ))}
           </div>
