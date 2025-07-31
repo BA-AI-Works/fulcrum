@@ -118,7 +118,7 @@ export default function AILayers() {
                     : "bg-gray-50 border-gray-200 hover:border-gray-300"
                 }`}
               >
-                <div className="flex items-start space-x-4">
+                <div className="flex items-center space-x-4 h-full">
                   <div className="w-10 h-10 bg-[#7A0000] rounded-full flex items-center justify-center flex-shrink-0">
                     {layer.id === 'vision' && <Lightbulb className="w-5 h-5 text-white" />}
                     {layer.id === 'exploration' && <Search className="w-5 h-5 text-white" />}
@@ -147,14 +147,14 @@ export default function AILayers() {
           </div>
 
           {/* Right Side - Dynamic Content */}
-          <div className="col-span-2 bg-[#F6F7F9] rounded-xl p-8">
-            <div className="grid grid-cols-5 gap-8">
+          <div className="col-span-2 bg-[#F6F7F9] rounded-xl p-8 h-80">
+            <div className="grid grid-cols-5 gap-8 h-full">
               {/* Their Transformation Section */}
-              <div className="col-span-2 bg-white rounded-xl p-6">
+              <div className="col-span-2 bg-white rounded-xl p-6 h-full flex flex-col">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   Their Transformation
                 </h3>
-                <div className="space-y-3">
+                <div className="flex-1 overflow-y-auto space-y-3">
                   {executionItems[selectedLayer]?.map((item, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-5 h-5 border-2 border-gray-300 rounded-full mt-1 flex-shrink-0 flex items-center justify-center">
@@ -169,11 +169,11 @@ export default function AILayers() {
               </div>
 
               {/* Journey of Trainings Section */}
-              <div className="col-span-3 bg-white rounded-xl p-6">
+              <div className="col-span-3 bg-white rounded-xl p-6 h-full flex flex-col">
                 <h3 className="text-lg font-bold text-gray-900 mb-6">
                   Journey of Trainings, Workshops & Seminars
                 </h3>
-                <div className="space-y-4">
+                <div className="flex-1 overflow-y-auto space-y-4">
                   {trainingItems[selectedLayer]?.map((training, index) => (
                     <div key={index} className="flex items-center space-x-4 bg-gray-50 rounded-lg p-4 border border-gray-100">
                       <div className="w-16 h-12 bg-gray-900 rounded-lg flex-shrink-0 flex items-center justify-center">
