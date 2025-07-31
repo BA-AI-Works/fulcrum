@@ -52,19 +52,19 @@ const layerOptions: LayerOption[] = [
 
 const executionItems: Record<string, ExecutionItem[]> = {
   vision: [
-    { title: "Strategic AI Roadmap", description: "" },
-    { title: "Executive Alignment", description: "" },
-    { title: "Investment Planning", description: "" }
+    { title: "End-to-end AI simulation for leadership", description: "" },
+    { title: "Strategy-to execution walkthrough", description: "" },
+    { title: "Shared strategic language and approach", description: "" }
   ],
   exploration: [
-    { title: "AI Awareness Programs", description: "" },
-    { title: "Use Case Discovery", description: "" },
-    { title: "Readiness Assessment", description: "" }
+    { title: "Inspiration-led AI awareness sessions", description: "" },
+    { title: "Real-world examples & mindset shifts", description: "" },
+    { title: "Creative & contextual thinking", description: "" }
   ],
   solution: [
-    { title: "Solution Architecture", description: "" },
-    { title: "Proof of Concept", description: "" },
-    { title: "Integration Planning", description: "" }
+    { title: "Role-based product thinking", description: "" },
+    { title: "Insight generation & problem framing", description: "" },
+    { title: "PM, UX, BA, data roles alignment", description: "" }
   ],
   execution: [
     { title: "Code / no-codesolution building", description: "" },
@@ -75,23 +75,18 @@ const executionItems: Record<string, ExecutionItem[]> = {
 
 const trainingItems: Record<string, TrainingItem[]> = {
   vision: [
-    { title: "Executive AI Leadership Training", image: "/api/placeholder/200/120" },
-    { title: "Strategic AI Planning Workshop", image: "/api/placeholder/200/120" },
-    { title: "AI Governance & Ethics Seminar", image: "/api/placeholder/200/120" }
+    { title: "Building the AI-Powered Organization Workshops", image: "/api/placeholder/200/120" }
   ],
   exploration: [
-    { title: "AI Awareness for Teams", image: "/api/placeholder/200/120" },
-    { title: "AI Use Case Discovery Workshop", image: "/api/placeholder/200/120" },
-    { title: "AI Readiness Assessment Training", image: "/api/placeholder/200/120" }
+    { title: "AI Inspiration & Upskilling Seminars Across the Organization", image: "/api/placeholder/200/120" }
   ],
   solution: [
-    { title: "AI Solution Design Workshop", image: "/api/placeholder/200/120" },
-    { title: "Prototype Development Training", image: "/api/placeholder/200/120" },
-    { title: "AI Integration Planning Seminar", image: "/api/placeholder/200/120" }
+    { title: "AI-Powered Business Analysis & Product Ownership Training", image: "/api/placeholder/200/120" },
+    { title: "AI-Powered Project & Product Management Training", image: "/api/placeholder/200/120" },
+    { title: "AI-Powered User/Customer Experience Design Training", image: "/api/placeholder/200/120" },
+    { title: "AI-Powered Data Analysis Training", image: "/api/placeholder/200/120" }
   ],
   execution: [
-    { title: "Vibe Coding: AI-Accelerated Development Training", image: "/api/placeholder/200/120" },
-    { title: "Vibe Coding: AI-Accelerated Development Training", image: "/api/placeholder/200/120" },
     { title: "Vibe Coding: AI-Accelerated Development Training", image: "/api/placeholder/200/120" }
   ]
 };
@@ -117,7 +112,7 @@ export default function AILayers() {
               <button
                 key={layer.id}
                 onClick={() => setSelectedLayer(layer.id)}
-                className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg ${
+                className={`w-full p-5 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg h-20 ${
                   selectedLayer === layer.id 
                     ? "bg-[#7A0000] text-white border-[#7A0000]" 
                     : "bg-gray-50 border-gray-200 hover:border-gray-300"
