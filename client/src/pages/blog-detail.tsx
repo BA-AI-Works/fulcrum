@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import { useParams, Link } from "wouter";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import Markdown from "markdown-to-jsx";
@@ -5,15 +6,25 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
-import { getBlogPostBySlug } from "@/data/blog-posts";
 import type { BlogPost } from "@shared/schema";
 
 export default function BlogDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   
-  const post = slug ? getBlogPostBySlug(slug) : undefined;
-  const isLoading = false;
-  const error = !post && slug ? new Error('Blog post not found') : null;
+  const { data: post, isLoading, error } = useQuery({
+    queryKey: ['/api/blog/posts', slug],
+    queryFn: async () => {
+      const response = await fetch(`/api/blog/posts/${slug}`);
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error('Blog post not found');
+        }
+        throw new Error('Failed to fetch blog post');
+      }
+      return response.json() as Promise<BlogPost>;
+    },
+    enabled: !!slug
+  });
 
   if (isLoading) {
     return (
