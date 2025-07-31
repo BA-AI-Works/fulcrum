@@ -173,7 +173,7 @@ export default function AILayers() {
                 <h3 className="text-lg font-bold text-gray-900 mb-6">
                   Journey of Trainings, Workshops & Seminars
                 </h3>
-                <div className="flex-1 overflow-y-auto space-y-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+                <div className="flex-1 overflow-y-auto space-y-4 scrollbar-thin pr-2" style={{maxHeight: '200px'}}>
                   {trainingItems[selectedLayer]?.map((training, index) => (
                     <div key={index} className="flex items-center space-x-4 bg-gray-50 rounded-lg p-4 border border-gray-100 flex-shrink-0">
                       <div className="w-16 h-12 bg-gray-900 rounded-lg flex-shrink-0 flex items-center justify-center">
