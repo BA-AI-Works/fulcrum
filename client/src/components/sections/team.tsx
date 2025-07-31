@@ -6,25 +6,25 @@ const teamMembers = [
     name: "Murat Dikmen",
     title: "Chief Executive Officer",
     bio: "Strategic AI transformation leader with extensive enterprise consulting experience.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
+    image: "/attached_assets/murat-dikmen1_1753967740571.jpg"
   },
   {
     name: "Koray Yitmen",
     title: "Chief Technology Officer",
     bio: "AI technology expert specializing in enterprise integration and scalable solutions.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
+    image: "/attached_assets/Koray-Yitmen1_1753967740568.jpg"
   },
   {
     name: "Meltem Bayrak",
     title: "Head of Operations",
     bio: "Operations excellence expert focused on AI process optimization and implementation.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
+    image: "/attached_assets/meltem-bayrak_1753967740572.jpeg"
   },
   {
     name: "Emrah Yayıcı",
     title: "Head of Strategy",
     bio: "Strategic planning expert driving AI transformation roadmaps for global enterprises.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
+    image: "/attached_assets/Emrah-yayici_1753967740571.jpeg"
   }
 ];
 

@@ -57,12 +57,7 @@ export default function Footer() {
               >
                 Projects
               </a>
-              <a 
-                href="/team"
-                className="block text-gray-400 hover:text-white transition-colors"
-              >
-                Team
-              </a>
+
               <a 
                 href="/blog"
                 className="block text-gray-400 hover:text-white transition-colors"

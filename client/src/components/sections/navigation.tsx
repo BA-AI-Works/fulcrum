@@ -50,11 +50,6 @@ export default function Navigation() {
             <FulcrumLogo />
           </Link>
           
-          <Link href="/team">
-            <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
-              Team
-            </button>
-          </Link>
           
           <Link href="/blog">
             <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
@@ -98,14 +93,7 @@ export default function Navigation() {
                 Projects
               </button>
             </Link>
-            <Link href="/team">
-              <button 
-                onClick={() => setIsOpen(false)}
-                className="block fulcrum-text hover:text-fulcrum-red transition-colors"
-              >
-                Team
-              </button>
-            </Link>
+
             <Link href="/blog">
               <button 
                 onClick={() => setIsOpen(false)}
