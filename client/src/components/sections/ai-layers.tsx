@@ -110,38 +110,35 @@ export default function AILayers() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-4 gap-12">
+        <div className="grid grid-cols-4 gap-8">
           {/* Left Side - Layer Options in Single Column */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {layerOptions.map((layer) => (
               <button
                 key={layer.id}
                 onClick={() => setSelectedLayer(layer.id)}
-                className={`w-full p-6 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg ${
+                className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg ${
                   selectedLayer === layer.id 
                     ? "bg-[#7A0000] text-white border-[#7A0000]" 
                     : "bg-gray-50 border-gray-200 hover:border-gray-300"
                 }`}
               >
-                <div className="flex flex-col items-start space-y-4">
-                  <div>
-                    {selectedLayer === layer.id ? (
-                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                        <div className="w-6 h-6 bg-[#7A0000] rounded-full"></div>
-                      </div>
-                    ) : (
-                      layer.icon
-                    )}
+                <div className="flex flex-col items-start space-y-3">
+                  <div className="w-10 h-10 bg-[#7A0000] rounded-full flex items-center justify-center">
+                    {layer.id === 'vision' && <Lightbulb className="w-5 h-5 text-white" />}
+                    {layer.id === 'exploration' && <Search className="w-5 h-5 text-white" />}
+                    {layer.id === 'solution' && <Layers className="w-5 h-5 text-white" />}
+                    {layer.id === 'execution' && <Cog className="w-5 h-5 text-white" />}
                   </div>
                   <div className="text-left">
-                    <h3 className={`text-lg font-bold mb-2 ${
+                    <h3 className={`text-base font-bold mb-1 ${
                       selectedLayer === layer.id 
                         ? "text-white" 
                         : "text-gray-900"
                     }`}>
                       {layer.title}
                     </h3>
-                    <p className={`text-sm ${
+                    <p className={`text-xs ${
                       selectedLayer === layer.id
                         ? "text-white/80"
                         : "text-gray-600"
@@ -155,8 +152,8 @@ export default function AILayers() {
           </div>
 
           {/* Right Side - Dynamic Content */}
-          <div className="col-span-3 bg-[#F6F7F9] rounded-xl p-6">
-            <div className="grid grid-cols-5 gap-6">
+          <div className="col-span-3 bg-[#F6F7F9] rounded-xl p-8">
+            <div className="grid grid-cols-5 gap-8">
               {/* Their Transformation Section */}
               <div className="col-span-2 bg-white rounded-xl p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
