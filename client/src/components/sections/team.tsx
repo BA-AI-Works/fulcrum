@@ -6,25 +6,25 @@ const teamMembers = [
     name: "Murat Dikmen",
     title: "Chief Executive Officer",
     bio: "Strategic AI transformation leader with extensive enterprise consulting experience.",
-    image: "/attached_assets/murat-dikmen1_1753967740571.jpg"
+    image: "/team-photos/murat-dikmen.jpg"
   },
   {
     name: "Koray Yitmen",
     title: "Chief Technology Officer",
     bio: "AI technology expert specializing in enterprise integration and scalable solutions.",
-    image: "/attached_assets/Koray-Yitmen1_1753967740568.jpg"
+    image: "/team-photos/koray-yitmen.jpg"
   },
   {
     name: "Meltem Bayrak",
     title: "Head of Operations",
     bio: "Operations excellence expert focused on AI process optimization and implementation.",
-    image: "/attached_assets/meltem-bayrak_1753967740572.jpeg"
+    image: "/team-photos/meltem-bayrak.jpg"
   },
   {
     name: "Emrah Yayıcı",
     title: "Head of Strategy",
     bio: "Strategic planning expert driving AI transformation roadmaps for global enterprises.",
-    image: "/attached_assets/Emrah-yayici_1753967740571.jpeg"
+    image: "/team-photos/emrah-yayici.jpg"
   }
 ];
 

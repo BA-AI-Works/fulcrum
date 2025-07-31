@@ -28,7 +28,7 @@ const blogPosts: BlogPost[] = [
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     author: {
       name: "Murat Dikmen",
-      avatar: "/attached_assets/murat-dikmen1_1753967740571.jpg"
+      avatar: "/team-photos/murat-dikmen.jpg"
     },
     date: "Mar 15, 2024",
     readTime: "5 min read",
@@ -55,7 +55,7 @@ const blogPosts: BlogPost[] = [
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     author: {
       name: "Koray Yitmen",
-      avatar: "/attached_assets/Koray-Yitmen1_1753967740568.jpg"
+      avatar: "/team-photos/koray-yitmen.jpg"
     },
     date: "Mar 10, 2024",
     readTime: "7 min read",
@@ -167,7 +167,7 @@ const blogPosts: BlogPost[] = [
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     author: {
       name: "Murat Dikmen",
-      avatar: "/attached_assets/murat-dikmen1_1753967740571.jpg"
+      avatar: "/team-photos/murat-dikmen.jpg"
     },
     date: "Feb 15, 2024",
     readTime: "7 min read",
