@@ -29,7 +29,7 @@ export default function Hero() {
           <span style={{ color: '#3a3a3a' }}>Tomorrow</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-800 mb-8 leading-relaxed">
-          Fulcrum empowers AI-Powered organizations to move from strategy to execution.
+          We Are Building AI Powered Organizations from Strategy to Execution
         </p>
         <Button 
           onClick={scrollToSolution}

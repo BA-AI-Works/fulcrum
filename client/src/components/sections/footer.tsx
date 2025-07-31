@@ -28,7 +28,7 @@ export default function Footer() {
               <img src={fulcrumWhiteLogoPath} alt="Fulcrum" className="h-12" />
             </div>
             <p className="text-gray-400 leading-relaxed mb-4">
-              Fulcrum empowers AI-Powered organizations to move from strategy to execution.
+              We Are Building AI Powered Organizations from Strategy to Execution
             </p>
             <a 
               href="https://www.linkedin.com/company/fulcrummanagementconsulting/" 
