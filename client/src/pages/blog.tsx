@@ -211,9 +211,10 @@ export default function BlogPage() {
 
       {/* Blog Posts Grid */}
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.id}`}>
+        <div className="bg-[#F9FAFB] rounded-2xl p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post) => (
+              <Link key={post.id} href={`/blog/${post.id}`}>
               <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer h-full bg-white">
                 <div className="aspect-video overflow-hidden relative">
                   <img 
@@ -238,7 +239,7 @@ export default function BlogPage() {
                     </p>
                     
                     {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2">
                       {post.tags.map((tag, tagIndex) => (
                         <span 
                           key={tagIndex}
@@ -250,7 +251,7 @@ export default function BlogPage() {
                     </div>
                   </div>
                   
-                  <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
+                  <div className="flex items-center mt-4 pt-4 border-t border-gray-100">
                     <div className="flex items-center space-x-3">
                       <img 
                         src={post.author.avatar} 
@@ -264,8 +265,9 @@ export default function BlogPage() {
                   </div>
                 </CardContent>
               </Card>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 

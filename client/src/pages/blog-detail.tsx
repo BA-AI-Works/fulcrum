@@ -190,7 +190,9 @@ const blogPosts: BlogPost[] = [
 
 export default function BlogDetailPage() {
   const { id } = useParams<{ id: string }>();
+  console.log('Blog Detail Page - Current ID:', id);
   const post = blogPosts.find(p => p.id === parseInt(id || '1'));
+  console.log('Found post:', post);
   
   if (!post) {
     return (
@@ -319,7 +321,7 @@ export default function BlogDetailPage() {
                       </p>
                       
                       {/* Tags */}
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap gap-2">
                         {relatedPost.tags.map((tag, tagIndex) => (
                           <span 
                             key={tagIndex}
@@ -330,7 +332,7 @@ export default function BlogDetailPage() {
                         ))}
                       </div>
                       
-                      <div className="flex items-center pt-4 border-t border-gray-100">
+                      <div className="flex items-center mt-4 pt-4 border-t border-gray-100">
                         <div className="flex items-center space-x-3">
                           <img 
                             src={relatedPost.author.avatar} 
