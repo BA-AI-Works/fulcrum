@@ -29,10 +29,10 @@ export default function BlogPage() {
             BIZIM BLOG
           </div>
           <h1 className="text-4xl md:text-5xl font-bold fulcrum-text mb-6">
-            Geleceği İnşa Etmek
+            Building Tomorrow
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Strateji, AI ve Çalışmanın Geleceği konularındaki en güncel trendlerde kalın
+            Stay updated with the latest trends, On Strategy, AI, and the Future of Work
           </p>
         </div>
       </div>

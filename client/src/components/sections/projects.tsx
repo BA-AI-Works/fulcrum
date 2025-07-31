@@ -224,7 +224,7 @@ export default function Projects() {
     <section id="projects" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold fulcrum-text mb-6">Select Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold fulcrum-text mb-6">Selected Projects</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Successful AI transformations across industries
           </p>
@@ -278,7 +278,7 @@ export default function Projects() {
         <div className="text-center mt-12">
           <Link href="/projects">
             <Button className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
-              See All Projects
+              see more projects
             </Button>
           </Link>
         </div>
