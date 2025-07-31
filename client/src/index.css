@@ -29,7 +29,7 @@
   --fulcrum-red-light: hsl(0, 55%, 35%);
   --fulcrum-red-lighter: hsl(0, 100%, 24%);
   --fulcrum-gray: hsl(0, 0%, 72%);
-  --fulcrum-text: hsl(20, 14.3%, 13.3%);
+  --fulcrum-text: hsl(0, 100%, 24%);
 }
 
 .dark {

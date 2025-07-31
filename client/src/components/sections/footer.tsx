@@ -1,5 +1,5 @@
 import { MapPin, Linkedin } from "lucide-react";
-import fulcrumWhiteLogoPath from "@assets/Fulcrum-white-logo_1753806212707.png";
+import fulcrumWhiteLogoPath from "@assets/fulcrum-logo-white_1753956849387.png";
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {

@@ -1,4 +1,4 @@
-import fulcrumLogoPath from "@assets/Fulcrum-logo_1753800988343.png";
+import fulcrumLogoPath from "@assets/fulcrum-logo_1753956840246.png";
 
 interface FulcrumLogoProps {
   className?: string;
