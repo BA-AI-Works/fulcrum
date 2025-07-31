@@ -40,8 +40,20 @@ export default function Navigation() {
             </button>
           </Link>
           
+          <Link href="/services">
+            <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
+              Services
+            </button>
+          </Link>
+          
           <Link href="/">
             <FulcrumLogo />
+          </Link>
+          
+          <Link href="/blog">
+            <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
+              Blog
+            </button>
           </Link>
           
           {location === "/" ? (
@@ -79,6 +91,22 @@ export default function Navigation() {
                 className="block fulcrum-text hover:text-fulcrum-red transition-colors"
               >
                 Projects
+              </button>
+            </Link>
+            <Link href="/services">
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="block fulcrum-text hover:text-fulcrum-red transition-colors"
+              >
+                Services
+              </button>
+            </Link>
+            <Link href="/blog">
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="block fulcrum-text hover:text-fulcrum-red transition-colors"
+              >
+                Blog
               </button>
             </Link>
             {location === "/" ? (
