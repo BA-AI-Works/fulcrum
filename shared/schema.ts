@@ -16,3 +16,18 @@ export const insertUserSchema = createInsertSchema(users).pick({
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
+
+// Blog post types for frontend/backend communication
+export interface BlogPost {
+  id: string;
+  title: string;
+  description: string;
+  author: string;
+  avatar: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  image: string;
+  content: string;
+  slug: string;
+}

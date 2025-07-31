@@ -10,6 +10,9 @@ app.use(express.urlencoded({ extended: false }));
 // Serve static assets from attached_assets directory
 app.use('/attached_assets', express.static(path.join(process.cwd(), 'attached_assets')));
 
+// Serve blog images from images directory
+app.use('/images', express.static(path.join(process.cwd(), 'images')));
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
