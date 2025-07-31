@@ -245,12 +245,7 @@ export default function ProjectsPage() {
             className={`w-full py-16 ${index % 2 === 0 ? 'bg-white' : 'bg-[#F9FAFB]'}`}
           >
             <div className="max-w-7xl mx-auto px-6">
-              {/* Project Number */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-gray-800">
-                  Project {index + 1}
-                </h3>
-              </div>
+
               
               <Card 
                 className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer bg-white"

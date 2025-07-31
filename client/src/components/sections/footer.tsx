@@ -91,9 +91,10 @@ export default function Footer() {
             <div className="text-gray-400 text-sm">
               <p className="mb-2 flex items-start">
                 <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                Maslak 42 Plaza, A Blok, No: 9, Kat:11
+                Unit 2, 15/F Glenealy Tower
               </p>
-              <p className="ml-6">34398, Sarıyer/İstanbul</p>
+              <p className="ml-6">No.1 Glenealy Central</p>
+              <p className="ml-6">Hong Kong</p>
             </div>
           </div>
         </div>

@@ -153,7 +153,7 @@ export default function AILayers() {
               {/* Their Transformation Section */}
               <div className="col-span-2 bg-white rounded-xl p-6 flex flex-col h-full">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  Their Transformation
+                  What This Layer Offers
                 </h3>
                 <div className="flex-1 overflow-y-auto space-y-3 scrollbar-thin">
                   {executionItems[selectedLayer]?.map((item, index) => (

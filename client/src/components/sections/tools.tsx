@@ -16,7 +16,7 @@ const tools = [
   },
   {
     title: "POwerBA",
-    description: "Helps Business Analysts craft product requirements documents faster and better, from business needs to test scenarios.",
+    description: "Crafting product requirements documents faster and better, from business needs to test scenarios.",
     icon: FileText,
     bgColor: "bg-fulcrum-red"
   },

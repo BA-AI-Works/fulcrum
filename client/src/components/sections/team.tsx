@@ -3,26 +3,26 @@ import { Linkedin } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Murat Dikmen",
-    title: "Chief Executive Officer",
+    name: "Murat",
+    title: "Partner",
     bio: "Strategic AI transformation leader with extensive enterprise consulting experience.",
     image: "/team-photos/murat-dikmen.jpg"
   },
   {
-    name: "Koray Yitmen",
-    title: "Chief Technology Officer",
+    name: "Koray",
+    title: "Partner",
     bio: "AI technology expert specializing in enterprise integration and scalable solutions.",
     image: "/team-photos/koray-yitmen.jpg"
   },
   {
-    name: "Meltem Bayrak",
-    title: "Head of Operations",
+    name: "Meltem",
+    title: "AI Projects Lead",
     bio: "Operations excellence expert focused on AI process optimization and implementation.",
     image: "/team-photos/meltem-bayrak.jpg"
   },
   {
-    name: "Emrah Yayıcı",
-    title: "Head of Strategy",
+    name: "Emrah",
+    title: "Partner",
     bio: "Strategic planning expert driving AI transformation roadmaps for global enterprises.",
     image: "/team-photos/emrah-yayici.jpg"
   }
