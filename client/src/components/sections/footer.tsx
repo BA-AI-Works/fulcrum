@@ -45,12 +45,24 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-6">Navigation</h3>
             <div className="space-y-3">
-              <button 
-                onClick={() => scrollToSection('projects')}
+              <a 
+                href="/projects"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Projects
-              </button>
+              </a>
+              <a 
+                href="/services"
+                className="block text-gray-400 hover:text-white transition-colors"
+              >
+                Services
+              </a>
+              <a 
+                href="/blog"
+                className="block text-gray-400 hover:text-white transition-colors"
+              >
+                Blog
+              </a>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="block text-gray-400 hover:text-white transition-colors"
