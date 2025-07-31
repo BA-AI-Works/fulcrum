@@ -219,7 +219,7 @@ export default function BlogDetailPage() {
             </Button>
           </Link>
           
-          <h1 className="text-4xl md:text-5xl font-bold fulcrum-text mb-8 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold blog-title mb-8 leading-tight">
             {post.title}
           </h1>
           
@@ -317,7 +317,7 @@ export default function BlogDetailPage() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-bold fulcrum-text mb-3 group-hover:text-fulcrum-red transition-colors duration-300">
+                      <h3 className="text-xl font-bold blog-title mb-3 group-hover:text-fulcrum-red transition-colors duration-300">
                         {relatedPost.title}
                       </h3>
                       <p className="text-gray-600 mb-4 line-clamp-2">
