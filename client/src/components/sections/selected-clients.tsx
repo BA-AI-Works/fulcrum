@@ -1,107 +1,53 @@
-// Sample client logos using simple SVG icons
+import adobeLogo from "@assets/Adobe_Corporate_logo_1753998094041.png";
+import akbankLogo from "@assets/akbank_1753998094043.png";
+import allianzLogo from "@assets/Allianz-logo_1753998094043.png";
+import anadoluSigortaLogo from "@assets/anadolu-sig_1753998094043.png";
+import fordLogo from "@assets/ford_1753998094043.png";
+import googleLogo from "@assets/Google_2015_logo.svg_1753998094043.webp";
+import isbankLogo from "@assets/isbank_1753998094043.png";
+import sonyLogo from "@assets/sony_1753998094043.png";
+
+// Client logos using provided images
 const clientLogos = [
   { 
-    name: "Company A", 
-    svg: (
-      <svg width="100" height="40" viewBox="0 0 100 40" className="text-gray-600">
-        <circle cx="20" cy="20" r="15" fill="currentColor" opacity="0.7"/>
-        <circle cx="35" cy="20" r="10" fill="currentColor" opacity="0.5"/>
-        <circle cx="45" cy="20" r="8" fill="currentColor" opacity="0.3"/>
-        <text x="60" y="25" fontSize="12" fill="currentColor">LOGO</text>
-      </svg>
-    )
+    name: "Adobe", 
+    image: adobeLogo,
+    width: "120px"
   },
   { 
-    name: "Company B", 
-    svg: (
-      <svg width="120" height="40" viewBox="0 0 120 40" className="text-gray-600">
-        <rect x="5" y="10" width="15" height="20" fill="currentColor" opacity="0.8"/>
-        <rect x="25" y="5" width="15" height="30" fill="currentColor" opacity="0.6"/>
-        <rect x="45" y="15" width="15" height="15" fill="currentColor" opacity="0.4"/>
-        <text x="70" y="25" fontSize="14" fill="currentColor" fontWeight="bold">logoipsum</text>
-      </svg>
-    )
+    name: "Akbank", 
+    image: akbankLogo,
+    width: "140px"
   },
   { 
-    name: "Company C", 
-    svg: (
-      <svg width="110" height="40" viewBox="0 0 110 40" className="text-gray-600">
-        <polygon points="10,30 25,10 40,30" fill="currentColor" opacity="0.7"/>
-        <circle cx="60" cy="20" r="12" fill="currentColor" opacity="0.5"/>
-        <text x="80" y="25" fontSize="12" fill="currentColor">logoipsum</text>
-      </svg>
-    )
+    name: "Allianz", 
+    image: allianzLogo,
+    width: "120px"
   },
   { 
-    name: "Company D", 
-    svg: (
-      <svg width="100" height="40" viewBox="0 0 100 40" className="text-gray-600">
-        <rect x="5" y="10" width="30" height="20" rx="10" fill="currentColor" opacity="0.6"/>
-        <text x="45" y="25" fontSize="14" fill="currentColor" fontWeight="bold">LOGO</text>
-      </svg>
-    )
+    name: "Anadolu Sigorta", 
+    image: anadoluSigortaLogo,
+    width: "160px"
   },
   { 
-    name: "Company E", 
-    svg: (
-      <svg width="130" height="40" viewBox="0 0 130 40" className="text-gray-600">
-        <path d="M10 20 L25 10 L40 20 L25 30 Z" fill="currentColor" opacity="0.7"/>
-        <rect x="50" y="15" width="20" height="10" fill="currentColor" opacity="0.5"/>
-        <text x="80" y="25" fontSize="12" fill="currentColor">logoipsum</text>
-      </svg>
-    )
+    name: "Ford", 
+    image: fordLogo,
+    width: "100px"
   },
   { 
-    name: "Company F", 
-    svg: (
-      <svg width="90" height="40" viewBox="0 0 90 40" className="text-gray-600">
-        <circle cx="15" cy="20" r="10" fill="none" stroke="currentColor" strokeWidth="3" opacity="0.7"/>
-        <circle cx="30" cy="20" r="5" fill="currentColor" opacity="0.8"/>
-        <text x="45" y="25" fontSize="12" fill="currentColor">logo</text>
-      </svg>
-    )
+    name: "Google", 
+    image: googleLogo,
+    width: "120px"
   },
   { 
-    name: "Company G", 
-    svg: (
-      <svg width="115" height="40" viewBox="0 0 115 40" className="text-gray-600">
-        <rect x="5" y="8" width="25" height="4" fill="currentColor" opacity="0.8"/>
-        <rect x="5" y="16" width="20" height="4" fill="currentColor" opacity="0.6"/>
-        <rect x="5" y="24" width="25" height="4" fill="currentColor" opacity="0.4"/>
-        <text x="40" y="25" fontSize="14" fill="currentColor" fontWeight="bold">logoipsum</text>
-      </svg>
-    )
+    name: "İş Bankası", 
+    image: isbankLogo,
+    width: "140px"
   },
   { 
-    name: "Company H", 
-    svg: (
-      <svg width="105" height="40" viewBox="0 0 105 40" className="text-gray-600">
-        <ellipse cx="20" cy="20" rx="15" ry="10" fill="currentColor" opacity="0.6"/>
-        <rect x="40" y="15" width="15" height="10" fill="currentColor" opacity="0.8"/>
-        <text x="65" y="25" fontSize="12" fill="currentColor">logo</text>
-      </svg>
-    )
-  },
-  { 
-    name: "Company I", 
-    svg: (
-      <svg width="125" height="40" viewBox="0 0 125 40" className="text-gray-600">
-        <path d="M10 10 Q20 5 30 10 Q20 25 10 30 Q5 20 10 10" fill="currentColor" opacity="0.7"/>
-        <circle cx="45" cy="20" r="8" fill="currentColor" opacity="0.5"/>
-        <text x="65" y="25" fontSize="13" fill="currentColor">logoipsum</text>
-      </svg>
-    )
-  },
-  { 
-    name: "Company J", 
-    svg: (
-      <svg width="95" height="40" viewBox="0 0 95 40" className="text-gray-600">
-        <rect x="5" y="12" width="8" height="16" fill="currentColor" opacity="0.8"/>
-        <rect x="18" y="8" width="8" height="24" fill="currentColor" opacity="0.6"/>
-        <rect x="31" y="14" width="8" height="12" fill="currentColor" opacity="0.4"/>
-        <text x="50" y="25" fontSize="12" fill="currentColor">LOGO</text>
-      </svg>
-    )
+    name: "Sony", 
+    image: sonyLogo,
+    width: "100px"
   },
 ];
 
@@ -128,7 +74,12 @@ export default function SelectedClients() {
             <div className="flex items-center space-x-12 min-w-max">
               {clientLogos.map((client, index) => (
                 <div key={`first-${index}`} className="flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                  {client.svg}
+                  <img 
+                    src={client.image} 
+                    alt={`${client.name} logo`}
+                    style={{ width: client.width, height: "40px", objectFit: "contain" }}
+                    className="grayscale hover:grayscale-0 transition-all duration-300"
+                  />
                 </div>
               ))}
             </div>
@@ -137,7 +88,12 @@ export default function SelectedClients() {
             <div className="flex items-center space-x-12 min-w-max ml-12">
               {clientLogos.map((client, index) => (
                 <div key={`second-${index}`} className="flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                  {client.svg}
+                  <img 
+                    src={client.image} 
+                    alt={`${client.name} logo`}
+                    style={{ width: client.width, height: "40px", objectFit: "contain" }}
+                    className="grayscale hover:grayscale-0 transition-all duration-300"
+                  />
                 </div>
               ))}
             </div>
@@ -146,7 +102,12 @@ export default function SelectedClients() {
             <div className="flex items-center space-x-12 min-w-max ml-12">
               {clientLogos.map((client, index) => (
                 <div key={`third-${index}`} className="flex-shrink-0 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                  {client.svg}
+                  <img 
+                    src={client.image} 
+                    alt={`${client.name} logo`}
+                    style={{ width: client.width, height: "40px", objectFit: "contain" }}
+                    className="grayscale hover:grayscale-0 transition-all duration-300"
+                  />
                 </div>
               ))}
             </div>
