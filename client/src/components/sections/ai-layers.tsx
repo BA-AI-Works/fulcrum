@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CheckCircle, Code, Wrench, TestTube, Users } from "lucide-react";
+import { CheckCircle, Lightbulb, Search, Layers, Cog } from "lucide-react";
 
 interface LayerOption {
   id: string;
@@ -24,28 +24,28 @@ const layerOptions: LayerOption[] = [
     id: "vision",
     title: "Vision",
     subtitle: "Executive Alignment for AI Transformation",
-    icon: <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center"><div className="w-2 h-2 bg-white rounded-full"></div></div>,
-    color: "bg-blue-50 border-blue-200"
+    icon: <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"><Lightbulb className="w-6 h-6 text-white" /></div>,
+    color: "bg-gray-50 border-gray-200"
   },
   {
     id: "exploration", 
     title: "Exploration",
     subtitle: "Organization-Wide AI Awareness",
-    icon: <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center"><div className="w-3 h-1 bg-white rounded"></div></div>,
-    color: "bg-blue-50 border-blue-200"
+    icon: <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"><Search className="w-6 h-6 text-white" /></div>,
+    color: "bg-gray-50 border-gray-200"
   },
   {
     id: "solution",
     title: "Solution Modeling", 
     subtitle: "Designing AI-Driven Solutions",
-    icon: <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center"><div className="w-2 h-2 bg-white rounded-full"></div></div>,
-    color: "bg-blue-50 border-blue-200"
+    icon: <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"><Layers className="w-6 h-6 text-white" /></div>,
+    color: "bg-gray-50 border-gray-200"
   },
   {
     id: "execution",
     title: "Execution Layer",
     subtitle: "AI-Powered Solution Implementation", 
-    icon: <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center"><div className="w-2 h-2 bg-red-800 rounded-full"></div></div>,
+    icon: <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center"><div className="w-6 h-6 bg-red-800 rounded-full"></div></div>,
     color: "bg-red-800 text-white"
   }
 ];
@@ -111,24 +111,24 @@ export default function AILayers() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left Side - Layer Options */}
-          <div className="space-y-4">
+          {/* Left Side - Layer Options in 2x2 Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {layerOptions.map((layer) => (
               <button
                 key={layer.id}
                 onClick={() => setSelectedLayer(layer.id)}
-                className={`w-full p-6 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg ${
+                className={`p-6 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg ${
                   selectedLayer === layer.id 
                     ? layer.color 
                     : "bg-gray-50 border-gray-200 hover:border-gray-300"
                 }`}
               >
-                <div className="flex items-start space-x-4">
-                  <div className="mt-1">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div>
                     {layer.icon}
                   </div>
                   <div>
-                    <h3 className={`text-xl font-bold mb-2 ${
+                    <h3 className={`text-lg font-bold mb-2 ${
                       selectedLayer === layer.id && layer.id === "execution" 
                         ? "text-white" 
                         : "text-gray-900"
