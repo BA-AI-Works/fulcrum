@@ -1,22 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
+import { getAllBlogPosts } from "@/data/blog-posts";
 import type { BlogPost } from "@shared/schema";
 
 export default function BlogPage() {
-  const { data: blogPosts = [], isLoading, error } = useQuery({
-    queryKey: ['/api/blog/posts'],
-    queryFn: async () => {
-      const response = await fetch('/api/blog/posts');
-      if (!response.ok) {
-        throw new Error('Failed to fetch blog posts');
-      }
-      return response.json() as Promise<BlogPost[]>;
-    }
-  });
+  const blogPosts = getAllBlogPosts();
+  const isLoading = false;
+  const error = null;
 
   return (
     <div className="min-h-screen bg-white">
