@@ -2,6 +2,7 @@ import Navigation from "@/components/sections/navigation";
 import Hero from "@/components/sections/hero";
 import Solution from "@/components/sections/solution";
 import Journey from "@/components/sections/journey";
+import AILayers from "@/components/sections/ai-layers";
 import ModularProof from "@/components/sections/modular-proof";
 import Tools from "@/components/sections/tools";
 import Projects from "@/components/sections/projects";
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <Solution />
       <Journey />
+      <AILayers />
       <ModularProof />
       <Tools />
       <Projects />
