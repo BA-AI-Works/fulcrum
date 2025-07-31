@@ -120,3 +120,43 @@
 .animate-scroll {
   animation: scroll 40s linear infinite;
 }
+
+/* Blog post content styling */
+.prose {
+  max-width: none;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--fulcrum-text);
+  line-height: 1.3;
+}
+
+.prose p {
+  color: rgb(55, 65, 81);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.prose strong {
+  color: rgb(17, 24, 39);
+  font-weight: 600;
+}
+
+/* Line clamp utility for blog descriptions */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
