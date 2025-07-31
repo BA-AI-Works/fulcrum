@@ -46,16 +46,22 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6">Navigation</h3>
             <div className="space-y-3">
               <a 
+                href="/"
+                className="block text-gray-400 hover:text-white transition-colors"
+              >
+                Home
+              </a>
+              <a 
                 href="/projects"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Projects
               </a>
               <a 
-                href="/services"
+                href="/team"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
-                Services
+                Team
               </a>
               <a 
                 href="/blog"

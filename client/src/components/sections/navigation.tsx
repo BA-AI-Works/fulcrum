@@ -34,20 +34,26 @@ export default function Navigation() {
     <nav className={`fixed top-0 left-0 right-0 bg-white z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : 'shadow-sm'}`} style={{ borderBottom: '1px solid #DBDBDB' }}>
       <div className="container mx-auto px-6 py-4 flex items-center justify-center">
         <div className="flex items-center space-x-12">
+          <Link href="/">
+            <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
+              Home
+            </button>
+          </Link>
+          
           <Link href="/projects">
             <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
               Projects
             </button>
           </Link>
           
-          <Link href="/services">
-            <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
-              Services
-            </button>
-          </Link>
-          
           <Link href="/">
             <FulcrumLogo />
+          </Link>
+          
+          <Link href="/team">
+            <button className="fulcrum-text hover:text-fulcrum-red transition-colors">
+              Team
+            </button>
           </Link>
           
           <Link href="/blog">
@@ -76,6 +82,14 @@ export default function Navigation() {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-fulcrum-gray">
           <div className="px-6 py-4 space-y-3">
+            <Link href="/">
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="block fulcrum-text hover:text-fulcrum-red transition-colors"
+              >
+                Home
+              </button>
+            </Link>
             <Link href="/projects">
               <button 
                 onClick={() => setIsOpen(false)}
@@ -84,12 +98,12 @@ export default function Navigation() {
                 Projects
               </button>
             </Link>
-            <Link href="/services">
+            <Link href="/team">
               <button 
                 onClick={() => setIsOpen(false)}
                 className="block fulcrum-text hover:text-fulcrum-red transition-colors"
               >
-                Services
+                Team
               </button>
             </Link>
             <Link href="/blog">

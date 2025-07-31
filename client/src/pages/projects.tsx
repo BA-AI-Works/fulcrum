@@ -3,6 +3,9 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/sections/navigation";
+import SelectedClients from "@/components/sections/selected-clients";
+import AIInfrastructure from "@/components/sections/ai-infrastructure";
+import Team from "@/components/sections/team";
 import Footer from "@/components/sections/footer";
 
 interface ProjectDetails {
@@ -416,6 +419,9 @@ export default function ProjectsPage() {
         </div>
       )}
       
+      <SelectedClients />
+      <AIInfrastructure />
+      <Team />
       <Footer />
     </div>
   );

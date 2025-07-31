@@ -47,15 +47,23 @@ Preferred communication style: Simple, everyday language.
 - **Accessibility**: Built on Radix UI primitives for accessibility compliance
 
 ### Landing Page Sections
-- **Navigation**: Sticky navigation with smooth scrolling
+- **Navigation**: Sticky navigation with smooth scrolling (Home, Projects, Team, Blog, Contact)
 - **Hero**: Full-screen hero section with call-to-action
 - **Solution**: Service overview with animated cards
 - **Journey**: Interactive step-by-step AI transformation process
+- **AI Layers**: Interactive vertical layout with fixed height content areas
 - **Modular Proof**: Detailed explanation of AI implementation approaches
 - **Tools**: Assessment tools showcase
 - **Projects**: Portfolio carousel
-- **Team**: Leadership team presentation
+- **Team**: Leadership team presentation (moved to separate page and projects page)
 - **Footer**: Contact information and navigation
+
+### Page Structure
+- **Home Page**: Hero, Solution, Journey, AI Layers, Modular Proof, Tools, Projects sections
+- **Projects Page**: Project listings with "We've partnered with" and "Our AI Infrastructure Ecosystem" modules at bottom, followed by Team section
+- **Team Page**: Dedicated team page with header and team section
+- **Blog Page**: Blog listings and featured posts
+- **Contact Page**: Contact forms and information
 
 ## Data Flow
 
