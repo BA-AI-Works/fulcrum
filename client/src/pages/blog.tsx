@@ -17,6 +17,7 @@ interface BlogPost {
   date: string;
   readTime: string;
   content: string;
+  tags: string[];
 }
 
 const blogPosts: BlogPost[] = [
@@ -26,11 +27,12 @@ const blogPosts: BlogPost[] = [
     description: "Discover strategies to enhance your AI return on investment effectively and sustainably in modern business environments.",
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     author: {
-      name: "Sarah Chen",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b13c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150"
+      name: "Murat Dikmen",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
     },
     date: "Mar 15, 2024",
     readTime: "5 min read",
+    tags: ["AI Implementation", "ROI", "Strategy"],
     content: `
       <p>In today's rapidly evolving business landscape, artificial intelligence has become a cornerstone of operational efficiency and innovation. Companies investing in AI technologies are discovering that the key to success lies not just in implementation, but in maximizing return on investment through strategic planning and execution.</p>
       
@@ -52,11 +54,12 @@ const blogPosts: BlogPost[] = [
     description: "Learn how to create robust AI systems that can adapt and thrive in uncertain business environments.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     author: {
-      name: "Michael Rodriguez",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150"
+      name: "Koray Yitmen",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
     },
     date: "Mar 10, 2024",
     readTime: "7 min read",
+    tags: ["Resilience", "AI Operations", "Business Continuity"],
     content: `
       <p>As organizations increasingly rely on AI-driven operations, building resilience into these systems becomes paramount. Resilient AI systems can adapt to changing conditions, recover from failures, and continue delivering value even in uncertain environments.</p>
       
@@ -78,11 +81,12 @@ const blogPosts: BlogPost[] = [
     description: "Discover how data analytics can unlock new opportunities and drive sustainable business expansion across industries.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     author: {
-      name: "Emma Thompson",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150"
+      name: "Meltem Bayrak",
+      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
     },
     date: "Mar 5, 2024",
     readTime: "6 min read",
+    tags: ["Data Analytics", "Business Growth", "Strategy"],
     content: `
       <p>In the modern business world, data has emerged as one of the most valuable assets for driving growth and innovation. Companies that harness the power of data-driven strategies gain a competitive advantage by making informed decisions, optimizing operations, and identifying new opportunities.</p>
       
@@ -108,11 +112,12 @@ const blogPosts: BlogPost[] = [
     description: "Learn how to lead teams through AI adoption and ensure successful organizational change management.",
     image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     author: {
-      name: "David Kim",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150"
+      name: "Emrah Yayıcı",
+      avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
     },
     date: "Feb 28, 2024",
     readTime: "8 min read",
+    tags: ["Team Management", "AI Transformation", "Change Management"],
     content: `
       <p>Successfully implementing AI technologies requires more than just technical expertise—it demands effective leadership and team management throughout the transformation process. Organizations that invest in proper change management see significantly higher success rates in their AI initiatives.</p>
       
@@ -134,11 +139,12 @@ const blogPosts: BlogPost[] = [
     description: "Explore key tactics to optimize financial strategies and maintain budget control during AI implementation projects.",
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     author: {
-      name: "Lisa Wang",
-      avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150"
+      name: "Fulcrum",
+      avatar: "/favicon.ico"
     },
     date: "Feb 20, 2024",
     readTime: "6 min read",
+    tags: ["Financial Intelligence", "AI Projects", "Budget Management"],
     content: `
       <p>Financial management is a critical aspect of successful AI implementation projects. Organizations that master financial intelligence in their AI initiatives can maximize returns while minimizing risks and ensuring sustainable growth.</p>
       
@@ -160,11 +166,12 @@ const blogPosts: BlogPost[] = [
     description: "Learn how building strong collaborations can accelerate AI adoption and unlock new revenue streams in competitive markets.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     author: {
-      name: "James Parker",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150"
+      name: "Murat Dikmen",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
     },
     date: "Feb 15, 2024",
     readTime: "7 min read",
+    tags: ["Strategic Partnerships", "AI Innovation", "Collaboration"],
     content: `
       <p>Strategic partnerships have become a cornerstone of successful AI innovation, enabling organizations to accelerate development, share risks, and access specialized expertise that would be difficult to develop in-house.</p>
       
@@ -188,16 +195,16 @@ export default function BlogPage() {
       <Navigation />
       
       {/* Header */}
-      <div className="bg-gray-50 pt-24 pb-16">
+      <div className="bg-[#F9FAFB] pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="inline-flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-600 mb-8">
             OUR BLOG
           </div>
           <h1 className="text-4xl md:text-5xl font-bold fulcrum-text mb-6">
-            Featured insights and articles
+            Building Tomorrow
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay updated with the latest trends, strategies, and insights in AI transformation and digital innovation.
+            Stay updated on the latest trends in Strategy, AI, and the Future of Work
           </p>
         </div>
       </div>
@@ -207,13 +214,19 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <Link key={post.id} href={`/blog/${post.id}`}>
-              <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer h-full">
-                <div className="aspect-video overflow-hidden">
+              <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 rounded-xl group cursor-pointer h-full bg-white">
+                <div className="aspect-video overflow-hidden relative">
                   <img 
                     src={post.image} 
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
+                  {/* Date badge on image */}
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-2">
+                    <span className="text-xs font-medium text-gray-700">
+                      {post.date} • {post.readTime}
+                    </span>
+                  </div>
                 </div>
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex-1">
@@ -223,9 +236,21 @@ export default function BlogPage() {
                     <p className="text-gray-600 mb-4 line-clamp-3">
                       {post.description}
                     </p>
+                    
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.map((tag, tagIndex) => (
+                        <span 
+                          key={tagIndex}
+                          className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                   
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                  <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
                     <div className="flex items-center space-x-3">
                       <img 
                         src={post.author.avatar} 
@@ -235,11 +260,6 @@ export default function BlogPage() {
                       <span className="text-sm font-medium text-gray-700">
                         {post.author.name}
                       </span>
-                    </div>
-                    <div className="flex items-center space-x-4 text-sm text-gray-500">
-                      <span>{post.date}</span>
-                      <span>•</span>
-                      <span>{post.readTime}</span>
                     </div>
                   </div>
                 </CardContent>
