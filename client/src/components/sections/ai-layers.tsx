@@ -24,28 +24,28 @@ const layerOptions: LayerOption[] = [
     id: "vision",
     title: "Vision",
     subtitle: "Executive Alignment for AI Transformation",
-    icon: <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"><Lightbulb className="w-6 h-6 text-white" /></div>,
+    icon: <div className="w-12 h-12 bg-[#7A0000] rounded-full flex items-center justify-center"><Lightbulb className="w-6 h-6 text-white" /></div>,
     color: "bg-gray-50 border-gray-200"
   },
   {
     id: "exploration", 
     title: "Exploration",
     subtitle: "Organization-Wide AI Awareness",
-    icon: <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"><Search className="w-6 h-6 text-white" /></div>,
+    icon: <div className="w-12 h-12 bg-[#7A0000] rounded-full flex items-center justify-center"><Search className="w-6 h-6 text-white" /></div>,
     color: "bg-gray-50 border-gray-200"
   },
   {
     id: "solution",
     title: "Solution Modeling", 
     subtitle: "Designing AI-Driven Solutions",
-    icon: <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"><Layers className="w-6 h-6 text-white" /></div>,
+    icon: <div className="w-12 h-12 bg-[#7A0000] rounded-full flex items-center justify-center"><Layers className="w-6 h-6 text-white" /></div>,
     color: "bg-gray-50 border-gray-200"
   },
   {
     id: "execution",
     title: "Execution Layer",
     subtitle: "AI-Powered Solution Implementation", 
-    icon: <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center"><div className="w-6 h-6 bg-gray-400 rounded-full"></div></div>,
+    icon: <div className="w-12 h-12 bg-[#7A0000] rounded-full flex items-center justify-center"><Cog className="w-6 h-6 text-white" /></div>,
     color: "bg-gray-50 border-gray-200"
   }
 ];
@@ -110,14 +110,14 @@ export default function AILayers() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left Side - Layer Options in 2x2 Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-4 gap-12">
+          {/* Left Side - Layer Options in Single Column */}
+          <div className="space-y-6">
             {layerOptions.map((layer) => (
               <button
                 key={layer.id}
                 onClick={() => setSelectedLayer(layer.id)}
-                className={`p-6 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg ${
+                className={`w-full p-6 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg ${
                   selectedLayer === layer.id 
                     ? "bg-[#7A0000] text-white border-[#7A0000]" 
                     : "bg-gray-50 border-gray-200 hover:border-gray-300"
@@ -155,10 +155,10 @@ export default function AILayers() {
           </div>
 
           {/* Right Side - Dynamic Content */}
-          <div className="bg-[#F6F7F9] rounded-xl p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="col-span-3 bg-[#F6F7F9] rounded-xl p-6">
+            <div className="grid grid-cols-5 gap-6">
               {/* Their Transformation Section */}
-              <div className="bg-white rounded-xl p-6">
+              <div className="col-span-2 bg-white rounded-xl p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   Their Transformation
                 </h3>
@@ -177,7 +177,7 @@ export default function AILayers() {
               </div>
 
               {/* Journey of Trainings Section */}
-              <div className="bg-white rounded-xl p-6">
+              <div className="col-span-3 bg-white rounded-xl p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-6">
                   Journey of Trainings, Workshops & Seminars
                 </h3>
