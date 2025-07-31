@@ -45,8 +45,8 @@ const layerOptions: LayerOption[] = [
     id: "execution",
     title: "Execution Layer",
     subtitle: "AI-Powered Solution Implementation", 
-    icon: <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center"><div className="w-6 h-6 bg-red-800 rounded-full"></div></div>,
-    color: "bg-red-800 text-white"
+    icon: <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center"><div className="w-6 h-6 bg-gray-400 rounded-full"></div></div>,
+    color: "bg-gray-50 border-gray-200"
   }
 ];
 
@@ -119,24 +119,30 @@ export default function AILayers() {
                 onClick={() => setSelectedLayer(layer.id)}
                 className={`p-6 rounded-xl border-2 text-left transition-all duration-300 hover:shadow-lg ${
                   selectedLayer === layer.id 
-                    ? layer.color 
+                    ? "bg-[#7A0000] text-white border-[#7A0000]" 
                     : "bg-gray-50 border-gray-200 hover:border-gray-300"
                 }`}
               >
-                <div className="flex flex-col items-center text-center space-y-4">
+                <div className="flex flex-col items-start space-y-4">
                   <div>
-                    {layer.icon}
+                    {selectedLayer === layer.id ? (
+                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                        <div className="w-6 h-6 bg-[#7A0000] rounded-full"></div>
+                      </div>
+                    ) : (
+                      layer.icon
+                    )}
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h3 className={`text-lg font-bold mb-2 ${
-                      selectedLayer === layer.id && layer.id === "execution" 
+                      selectedLayer === layer.id 
                         ? "text-white" 
                         : "text-gray-900"
                     }`}>
                       {layer.title}
                     </h3>
                     <p className={`text-sm ${
-                      selectedLayer === layer.id && layer.id === "execution"
+                      selectedLayer === layer.id
                         ? "text-white/80"
                         : "text-gray-600"
                     }`}>
@@ -149,48 +155,50 @@ export default function AILayers() {
           </div>
 
           {/* Right Side - Dynamic Content */}
-          <div className="space-y-8">
-            {/* Their Transformation Section */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">
-                Their Transformation
-              </h3>
-              <div className="space-y-3">
-                {executionItems[selectedLayer]?.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="w-5 h-5 border-2 border-gray-300 rounded-full mt-1 flex-shrink-0 flex items-center justify-center">
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                    </div>
-                    <div>
-                      <span className="text-gray-700 text-sm">{item.title}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Journey of Trainings Section */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-gray-900 mb-6">
-                Journey of Trainings, Workshops & Seminars
-              </h3>
-              <div className="space-y-4">
-                {trainingItems[selectedLayer]?.map((training, index) => (
-                  <div key={index} className="flex items-center space-x-4 bg-gray-50 rounded-lg p-4 border border-gray-100">
-                    <div className="w-16 h-12 bg-gray-900 rounded-lg flex-shrink-0 flex items-center justify-center">
-                      <div className="text-green-400 text-xs font-mono leading-tight">
-                        <div>01</div>
-                        <div>02</div>
+          <div className="bg-[#F6F7F9] rounded-xl p-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Their Transformation Section */}
+              <div className="bg-white rounded-xl p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">
+                  Their Transformation
+                </h3>
+                <div className="space-y-3">
+                  {executionItems[selectedLayer]?.map((item, index) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <div className="w-5 h-5 border-2 border-gray-300 rounded-full mt-1 flex-shrink-0 flex items-center justify-center">
+                        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                      </div>
+                      <div>
+                        <span className="text-gray-700 text-sm">{item.title}</span>
                       </div>
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-medium text-gray-900 text-sm">
-                        {training.title}
-                      </h4>
+                  ))}
+                </div>
+              </div>
+
+              {/* Journey of Trainings Section */}
+              <div className="bg-white rounded-xl p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-6">
+                  Journey of Trainings, Workshops & Seminars
+                </h3>
+                <div className="space-y-4">
+                  {trainingItems[selectedLayer]?.map((training, index) => (
+                    <div key={index} className="flex items-center space-x-4 bg-gray-50 rounded-lg p-4 border border-gray-100">
+                      <div className="w-16 h-12 bg-gray-900 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <div className="text-green-400 text-xs font-mono leading-tight">
+                          <div>03</div>
+                          <div>04</div>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-medium text-gray-900 text-sm">
+                          {training.title}
+                        </h4>
+                      </div>
+                      <div className="w-1 h-8 bg-red-500 rounded-full flex-shrink-0"></div>
                     </div>
-                    <div className="w-1 h-8 bg-red-500 rounded-full flex-shrink-0"></div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
