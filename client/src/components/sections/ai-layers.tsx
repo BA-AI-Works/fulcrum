@@ -110,7 +110,7 @@ export default function AILayers() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-3 gap-8">
           {/* Left Side - Layer Options in Single Column */}
           <div className="space-y-4">
             {layerOptions.map((layer) => (
@@ -123,8 +123,8 @@ export default function AILayers() {
                     : "bg-gray-50 border-gray-200 hover:border-gray-300"
                 }`}
               >
-                <div className="flex flex-col items-start space-y-3">
-                  <div className="w-10 h-10 bg-[#7A0000] rounded-full flex items-center justify-center">
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 bg-[#7A0000] rounded-full flex items-center justify-center flex-shrink-0">
                     {layer.id === 'vision' && <Lightbulb className="w-5 h-5 text-white" />}
                     {layer.id === 'exploration' && <Search className="w-5 h-5 text-white" />}
                     {layer.id === 'solution' && <Layers className="w-5 h-5 text-white" />}
@@ -152,7 +152,7 @@ export default function AILayers() {
           </div>
 
           {/* Right Side - Dynamic Content */}
-          <div className="col-span-3 bg-[#F6F7F9] rounded-xl p-8">
+          <div className="col-span-2 bg-[#F6F7F9] rounded-xl p-8">
             <div className="grid grid-cols-5 gap-8">
               {/* Their Transformation Section */}
               <div className="col-span-2 bg-white rounded-xl p-6">
