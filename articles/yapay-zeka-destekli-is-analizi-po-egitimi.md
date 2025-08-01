@@ -6,7 +6,7 @@ avatar: "/team-photos/emrah-yayici.jpg"
 date: "2024-12-31"
 readTime: "8 min read"
 tags: ["Yapay Zeka", "İş Analizi", "Product Owner", "Continuous Analysis", "Agile", "DevOps"]
-image: "/images/continuous-analysis-blog.jpg"
+image: "continuous-analysis-blog.jpg"
 ---
 
 # İş Dünyasında Yeni Bir Çağ: Continuous Analysis (CA) ile Yapay Zeka Destekli İş Analizi ve Ürün Yönetimi
