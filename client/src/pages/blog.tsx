@@ -25,9 +25,6 @@ export default function BlogPage() {
       {/* Header */}
       <div className="bg-[#F9FAFB] pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-600 mb-8">
-            BIZIM BLOG
-          </div>
           <h1 className="text-4xl md:text-5xl font-bold fulcrum-text mb-6">
             Building Tomorrow
           </h1>

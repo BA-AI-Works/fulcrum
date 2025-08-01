@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import fulcrumBackgroundPath from "@assets/fulcrum-background_1753804782085.jpg";
+import fulcrumBackgroundPath from "/fulcrum-header-background.jpg";
 
 export default function Hero() {
   const scrollToSolution = () => {
