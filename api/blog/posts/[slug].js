@@ -1,8 +1,8 @@
-import fs from 'fs/promises';
-import path from 'path';
-import matter from 'gray-matter';
+const fs = require('fs/promises');
+const path = require('path');
+const matter = require('gray-matter');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
