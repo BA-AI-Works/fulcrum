@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
+import OtherBlogs from "@/components/sections/other-blogs";
 import type { BlogPost } from "@shared/schema";
 
 export default function BlogDetailPage() {
@@ -216,6 +217,9 @@ export default function BlogDetailPage() {
           </Link>
         </div>
       </article>
+
+      {/* Other Blogs Section */}
+      <OtherBlogs currentSlug={slug} limit={3} />
 
       <Footer />
     </div>
