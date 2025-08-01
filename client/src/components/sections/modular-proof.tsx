@@ -28,7 +28,6 @@ export default function ModularProof() {
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
                     Will my organization be able to timely adapt to the major change?
                   </h3>
-                  <h4 className="text-lg font-semibold mb-4" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Iterative Approach</h4>
                   <p className="text-gray-300 leading-relaxed">
                     First implement easier processes (e.g. batch processes). Have your organization gain confidence 
                     in the new way of working. Then scale up including more complex processes (e.g. real-time processes).
@@ -50,7 +49,6 @@ export default function ModularProof() {
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
                     Will I lose control over business processes?
                   </h3>
-                  <h4 className="text-lg font-semibold mb-4" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Human-in-the-loop</h4>
                   <p className="text-gray-300 leading-relaxed">
                     You will always be at the helm and have the liberty to set the AI autonomy level.
                   </p>
@@ -62,7 +60,7 @@ export default function ModularProof() {
         </div>
 
         {/* Data Privacy Module */}
-        <div className="max-w-4xl mx-auto mt-2">
+        <div className="max-w-4xl mx-auto -mt-4">
           <div className="bg-white rounded-3xl p-12 text-center border border-gray-100 shadow-sm">
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
               Will I share my data with 3rd parties?
