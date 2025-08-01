@@ -208,14 +208,7 @@ export default function BlogDetailPage() {
           </div>
         </div>
 
-        {/* Navigation to other posts */}
-        <div className="mt-16 pt-8 border-t border-gray-200 text-center">
-          <Link href="/blog">
-            <Button size="lg" className="bg-fulcrum-red hover:bg-fulcrum-red/90">
-              Diğer Blog Yazılarını Keşfet
-            </Button>
-          </Link>
-        </div>
+        
       </article>
 
       {/* Other Blogs Section */}
