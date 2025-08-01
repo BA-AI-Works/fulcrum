@@ -6,7 +6,7 @@ avatar: "/team-photos/meltem-bayrak.jpg"
 date: "2024-03-05"
 readTime: "6 min read"
 tags: ["Financial Management", "AI Projects", "ROI"]
-image: "financial-intelligence.jpg"
+image: "financial-intelligence.jpeg"
 ---
 
 # Financial Intelligence in AI Project Management
