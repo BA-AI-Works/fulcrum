@@ -56,17 +56,31 @@ export default function ModularProof() {
 
         {/* Data Privacy Module */}
         <div className="max-w-7xl mx-auto mt-16">
-          <Card className="hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-fulcrum-red">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-xl font-bold fulcrum-text mb-4">Will I share my data with 3rd parties?</h3>
-              <p className="text-gray-600 leading-relaxed">
-                <span className="inline-flex items-center gap-2">
-                  <Lock className="w-4 h-4" />
-                  <strong>Data Privacy</strong>
-                </span> — You can keep your data locally and do not share
-              </p>
-            </CardContent>
-          </Card>
+          <div className="bg-gray-900 rounded-3xl p-16 text-center relative overflow-hidden">
+            {/* Dot pattern background */}
+            <div className="absolute inset-0 opacity-30">
+              <div className="absolute inset-0" style={{
+                backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                backgroundSize: '20px 20px'
+              }}></div>
+            </div>
+            
+            <div className="relative z-10">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                Will I share my data with<br />
+                <span className="text-gray-400">3rd parties?</span>
+              </h3>
+              <div className="mt-8">
+                <span className="inline-flex items-center gap-3 text-white text-lg">
+                  <Lock className="w-6 h-6" />
+                  <strong>Secure Data Privacy</strong>
+                </span>
+                <p className="text-gray-300 text-lg mt-4 max-w-2xl mx-auto">
+                  Your data stays completely private and secure. We never share your information with third parties - everything remains under your control.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
