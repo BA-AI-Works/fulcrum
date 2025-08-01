@@ -52,8 +52,8 @@ export default function ModularProof() {
         </div>
 
         {/* Data Privacy Module */}
-        <div className="max-w-7xl mx-auto mt-16">
-          <div className="bg-gray-900 rounded-3xl p-16 text-center relative overflow-hidden">
+        <div className="max-w-4xl mx-auto mt-8">
+          <div className="bg-gray-900 rounded-3xl p-12 text-center relative overflow-hidden">
             {/* Dot pattern background */}
             <div className="absolute inset-0 opacity-30">
               <div className="absolute inset-0" style={{
@@ -63,10 +63,10 @@ export default function ModularProof() {
             </div>
             
             <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
                 Will I share my data with 3rd parties?
               </h3>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 <span className="inline-flex items-center gap-2">
                   <Lock className="w-4 h-4" />
                   <strong>Secure Data Privacy</strong>
