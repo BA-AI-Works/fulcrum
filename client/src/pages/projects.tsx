@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, GraduationCap, Users, ShoppingCart, Megaphone, FileText, Factory, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/sections/navigation";
@@ -18,6 +18,7 @@ interface Project {
   title: string;
   description: string;
   image: string;
+  icon: JSX.Element;
   details: ProjectDetails;
 }
 
@@ -25,7 +26,8 @@ const projects = [
   {
     title: "AI-Powered Learning Experience Design for a Leading Learning Solutions Provider",
     description: "Client is a leading AI trainings company aiming to build an intelligent, end-to-end learning platform.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "/images/project-background.jpg",
+    icon: <GraduationCap className="w-8 h-8 text-white" />,
     tags: ["AI", "LMS", "Machine Learning", "EdTech"],
     details: {
       subtitle: "Client is a leading AI trainings company aiming to build an intelligent, end-to-end learning platform. The objective was to design an AI-powered LMS that could autonomously detect individual learning needs and manage the entire learning journey.",
@@ -42,7 +44,8 @@ const projects = [
   {
     title: "AI-Based Talent Matching Engine for an IT Outsourcing Company",
     description: "Efficiently match CVs to job openings with contextual analysis for streamlined recruitment processes.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "/images/project-background.jpg",
+    icon: <Users className="w-8 h-8 text-white" />,
     tags: ["AI", "HR Tech", "Recruitment"],
     details: {
       subtitle: "Client is an IT outsourcing services provider aiming to optimize its talent placement processes. The objective was to design an AI-powered matching engine that could efficiently analyze incoming CVs and match them to open roles based on relevance and fit.",
@@ -59,7 +62,8 @@ const projects = [
   {
     title: "AI Strategy Dev. & Intelligent Sales Platform Implementation for a Leading Food Distributor",
     description: "Designed & deployed intelligent quotation/order flows with comprehensive AI strategy development.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "/images/project-background.jpg",
+    icon: <ShoppingCart className="w-8 h-8 text-white" />,
     tags: ["AI Strategy", "Sales Platform", "B2B", "Food Industry"],
     details: {
       subtitle: "Client is a regional B2B food distribution company, leader in frozen food distribution, distributing food to primarily hotels, restaurants and cafes",
@@ -78,7 +82,8 @@ const projects = [
   {
     title: "AI Agent for Marketing Automation and Intelligence",
     description: "SEO optimization, content publishing, and multilingual conversational agents for enhanced marketing intelligence.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "/images/project-background.jpg",
+    icon: <Megaphone className="w-8 h-8 text-white" />,
     tags: ["AI Agent", "Marketing Automation", "SEO", "Content Management"],
     details: {
       subtitle: "The client wanted to streamline marketing operations - ranging from customer support to content publishing, performance analysis, and SEO/AIEO optimization - across multiple languages and social media platforms",
@@ -95,7 +100,8 @@ const projects = [
   {
     title: "AI Agent for End-to-End Product Requirements Design",
     description: "Clients needed a domain-specific AI agent to support business analysts and product teams in defining high-quality product requirements with speed and consistency.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "/images/project-background.jpg",
+    icon: <FileText className="w-8 h-8 text-white" />,
     tags: ["AI Agent", "Product Requirements", "Business Analysis"],
     details: {
       subtitle: "Clients needed a domain-specific AI agent to support business analysts and product teams in defining high-quality product requirements with speed and consistency.",
@@ -113,7 +119,8 @@ const projects = [
   {
     title: "AI-Integrated Digital Factory for A Digital Product Delivery House",
     description: "Client wanted to reduce coordination overhead, shorten iteration cycles, and ensure continuous visibility and automation across the stack. The team established a fully digital software factory.",
-    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "/images/project-background.jpg",
+    icon: <Factory className="w-8 h-8 text-white" />,
     tags: ["Digital Factory", "DevOps", "Automation", "AI Integration"],
     details: {
       subtitle: "Client wanted to reduce coordination overhead, shorten iteration cycles, and ensure continuous visibility and automation across the stack. The team established a fully digital software factory.",
@@ -131,7 +138,8 @@ const projects = [
   {
     title: "Talent Strategy Design for a Global Pharmaceutical Company",
     description: "Client is a multinational pharmaceutical company looking to strengthen its position as an employer of choice by designing an HR strategy focused on talent attraction, engagement, and a consistent organizational identity",
-    image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "/images/project-background.jpg",
+    icon: <Heart className="w-8 h-8 text-white" />,
     tags: ["Talent Strategy", "HR", "Pharmaceutical", "Employer Branding"],
     details: {
       subtitle: "Client is a multinational pharmaceutical company looking to strengthen its position as an employer of choice by designing an HR strategy focused on talent attraction, engagement, and a consistent organizational identity",
@@ -148,7 +156,8 @@ const projects = [
   {
     title: "AI Strategy Development for a Technology Company",
     description: "Client wanted streamline its workforce base to transform into a leaner organization. It wanted to identify the most relevant areas for AI implementations and workforce competency improvement requirements",
-    image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "/images/project-background.jpg",
+    icon: <Users className="w-8 h-8 text-white" />,
     tags: ["AI Strategy", "Workforce Transformation", "Technology"],
     details: {
       subtitle: "Client wanted streamline its workforce base to transform into a leaner organization. It wanted to identify the most relevant areas for AI implementations and workforce competency improvement requirements",
@@ -166,7 +175,8 @@ const projects = [
   {
     title: "Global Engagement on Emerging Technologies for a Pharmaceutical Company",
     description: "Client is a global pharmaceutical company seeking to explore the role of AI and other emerging technologies in the future of pharma. We facilitated a strategic program bringing together medical experts from across the world to co-develop insights and use cases",
-    image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    image: "/images/project-background.jpg",
+    icon: <Heart className="w-8 h-8 text-white" />,
     tags: ["Emerging Technologies", "Pharmaceutical", "Global Strategy", "Healthcare AI"],
     details: {
       subtitle: "Client is a global pharmaceutical company seeking to explore the role of AI and other emerging technologies in the future of pharma. We facilitated a strategic program bringing together medical experts from across the world to co-develop insights and use cases",
@@ -255,11 +265,21 @@ export default function ProjectsPage() {
                   {/* Left side - Project Image, Title, Subtitle */}
                   <div className="p-8 flex flex-col h-full">
                     <div className="flex-1">
-                      <img 
-                        src={project.image} 
-                        alt={project.title}
-                        className="w-full h-64 object-cover rounded-lg mb-6"
-                      />
+                      <div className="relative w-full h-64 mb-6">
+                        <img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div 
+                            className="w-16 h-16 rounded-full flex items-center justify-center"
+                            style={{ backgroundColor: '#7A0000' }}
+                          >
+                            {project.icon}
+                          </div>
+                        </div>
+                      </div>
                       <div>
                         <h2 className="text-2xl font-bold fulcrum-text mb-4 group-hover:text-fulcrum-red transition-colors duration-300">
                           {project.title}
