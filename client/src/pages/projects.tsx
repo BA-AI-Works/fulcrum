@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, X, GraduationCap, Users, ShoppingCart, Megaphone, FileText, Factory, Heart } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, GraduationCap, Users, ShoppingCart, Megaphone, FileText, Factory, Heart, Palette } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/sections/navigation";
@@ -194,6 +194,24 @@ const projects = [
   {
     title: "AI-Powered Personal Art Assistant & Art Engagement Platform Development",
     description: "Client is a global art and technology initiative aiming to create a personalized, interactive journey for art enthusiasts. The objective was to design an AI and machine learning-powered platform that acts as a personal art assistant.",
+    image: "/images/project-background.jpg",
+    icon: <Palette className="w-8 h-8 text-white" />,
+    tags: ["AI", "Art Technology", "Personalization", "Machine Learning"],
+    details: {
+      subtitle: "Client is a global art and technology initiative aiming to create a personalized, interactive journey for art enthusiasts. The objective was to design an AI and machine learning-powered platform that acts as a personal art assistant.",
+      scope: [
+        "Defined the user experience strategy to guide individuals through personalized artistic discovery and interaction",
+        "Designed the AI- and ML-based engine to understand user interests, suggest artworks, and build contextual content feeds",
+        "Structured a reward system that recognizes engagement through curated challenges and community-driven interactions",
+        "Developed gamified mechanisms to promote recurring participation and peer-based sharing",
+        "Integrated social features that allow users to connect through shared artistic interests and collaborative discovery",
+        "Delivered the technical architecture, user interface blueprints, and engagement strategies to support scalable implementation"
+      ]
+    }
+  },
+  {
+    title: "AI-Powered Personal Art Assistant & Art Engagement Platform Development",
+    description: "Client is a global art and technology initiative aiming to create a personalized, interactive journey for art enthusiasts. The objective was to design an AI and machine learning-powered platform that acts as a personal art assistant.",
     image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     tags: ["AI", "Art Technology", "Personalization", "Machine Learning"],
     details: {
@@ -381,11 +399,21 @@ export default function ProjectsPage() {
                 {/* Left side - Project Image, Title, Subtitle */}
                 <div className="p-8 flex flex-col h-full">
                   <div className="flex-1">
-                    <img 
-                      src={projects[dialogProjectIndex]?.image} 
-                      alt={projects[dialogProjectIndex]?.title}
-                      className="w-full h-64 object-cover rounded-lg mb-6"
-                    />
+                    <div className="relative w-full h-64 mb-6">
+                      <img 
+                        src={projects[dialogProjectIndex]?.image} 
+                        alt={projects[dialogProjectIndex]?.title}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div 
+                          className="w-16 h-16 rounded-full flex items-center justify-center"
+                          style={{ backgroundColor: '#7A0000' }}
+                        >
+                          {projects[dialogProjectIndex]?.icon}
+                        </div>
+                      </div>
+                    </div>
                     <div>
                       <h2 className="text-2xl font-bold fulcrum-text mb-4">
                         {projects[dialogProjectIndex]?.title}
