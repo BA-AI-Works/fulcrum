@@ -2,11 +2,11 @@
 title: "Yapay Zeka Destekli İş Analizi & PO Eğitimi – Yeni Nesil İş Yapış Şekilleri"
 description: "Continuous Analysis (CA) ile yapay zeka destekli iş analizi ve ürün yönetimi süreçlerinin iş dünyasında yarattığı devrim ve yeni nesil çalışma şekillerini keşfedin."
 author: "Emrah Yayıcı"
-avatar: "/avatars/emrah-yayici.jpg"
+avatar: "/team-photos/emrah-yayici.jpg"
 date: "2024-12-31"
 readTime: "8 min read"
 tags: ["Yapay Zeka", "İş Analizi", "Product Owner", "Continuous Analysis", "Agile", "DevOps"]
-image: "continuous-analysis-blog.jpg"
+image: "/images/continuous-analysis-blog.jpg"
 ---
 
 # İş Dünyasında Yeni Bir Çağ: Continuous Analysis (CA) ile Yapay Zeka Destekli İş Analizi ve Ürün Yönetimi
