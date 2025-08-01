@@ -13,7 +13,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist/public",
-        "buildCommand": "npm run build && node build-articles.js"
+        "buildCommand": "npm run build && node build-articles.js && node copy-images.js"
       }
     }
   ],
