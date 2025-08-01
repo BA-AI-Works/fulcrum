@@ -209,22 +209,7 @@ const projects = [
       ]
     }
   },
-  {
-    title: "AI-Powered Personal Art Assistant & Art Engagement Platform Development",
-    description: "Client is a global art and technology initiative aiming to create a personalized, interactive journey for art enthusiasts. The objective was to design an AI and machine learning-powered platform that acts as a personal art assistant.",
-    image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    tags: ["AI", "Art Technology", "Personalization", "Machine Learning"],
-    details: {
-      subtitle: "Client is a global art and technology initiative aiming to create a personalized, interactive journey for art enthusiasts. The objective was to design an AI and machine learning-powered platform that acts as a personal art assistant.",
-      scope: [
-        "Defined the user experience strategy to guide individuals through personalized artistic discovery and interaction",
-        "Designed the AI- and ML-based engine to understand user interests, suggest artworks, and build contextual content feeds",
-        "Structured a reward system that recognizes engagement through curated challenges and community-driven interactions",
-        "Developed gamified mechanisms to promote recurring participation and peer-based sharing",
-        "Delivered the platform architecture, experience flows, and interaction models across mobile and web interfaces"
-      ]
-    }
-  }
+
 ];
 
 export default function ProjectsPage() {
