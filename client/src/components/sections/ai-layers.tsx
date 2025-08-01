@@ -91,6 +91,14 @@ const trainingItems: Record<string, TrainingItem[]> = {
   ]
 };
 
+// Training numbers mapping
+const trainingNumbers: Record<string, string[]> = {
+  vision: ["01"],
+  exploration: ["02"],
+  solution: ["03", "04", "05", "06"],
+  execution: ["07"]
+};
+
 export default function AILayers() {
   const [selectedLayer, setSelectedLayer] = useState("execution");
 
@@ -179,10 +187,9 @@ export default function AILayers() {
                 }}>
                   {trainingItems[selectedLayer]?.map((training, index) => (
                     <div key={index} className="flex items-center space-x-4 bg-gray-50 rounded-lg p-4 border border-gray-100 flex-shrink-0">
-                      <div className="w-16 h-12 bg-gray-900 rounded-lg flex-shrink-0 flex items-center justify-center">
-                        <div className="text-green-400 text-xs font-mono leading-tight">
-                          <div>03</div>
-                          <div>04</div>
+                      <div className="w-16 h-12 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: '#7A0000' }}>
+                        <div className="text-green-400 text-sm font-mono font-bold">
+                          {trainingNumbers[selectedLayer]?.[index] || `0${index + 1}`}
                         </div>
                       </div>
                       <div className="flex-1">
