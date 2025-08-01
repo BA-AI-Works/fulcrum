@@ -1,0 +1,72 @@
+---
+title: "Stratejik Kararlar İçin Yeni Yaklaşımlar: Yapay Zeka Destekli Veri Analizi"
+description: "Günümüz dünyasında veri, stratejik karar alma süreçlerinin merkezinde yer alıyor. Yapay zeka destekli veri analizi ile rekabet avantajı elde etmenin yollarını keşfedin."
+author: "Emrah Yayıcı"
+avatar: "/team-photos/emrah-yayici.jpg"
+date: "2025-08-01"
+readTime: "12 min read"
+tags: ["Yapay Zeka", "Veri Analizi", "Stratejik Karar", "İş Analizi", "Makine Öğrenmesi", "RAG"]
+image: "stratejik-kararlar-veri-analizi.jpg"
+---
+
+# Stratejik Kararlar İçin Yeni Yaklaşımlar: Yapay Zeka Destekli Veri Analizi
+
+Günümüz dünyasında veri, stratejik karar alma süreçlerinin merkezinde yer alıyor. Yapay zeka destekli veri analizi, şirketlerin rekabet avantajı elde etmesini sağlayan en kritik alanlardan biri haline geldi. BA-Works olarak gerçekleştirdiğimiz "Yapay Zeka Destekli Veri Analizi" eğitimi, savunma sanayii, otomotiv, finans ve bilişim sektörlerinden profesyonelleri bir araya getirerek, uluslararası metodolojiler ve ileri düzey tekniklerle donatılmış kapsamlı bir öğrenme deneyimi sunuyor.
+
+## İş Analizi ve Veri Analizi Arasındaki İlişki
+
+Eğitim süresince, IIBA (International Institute of Business Analysis) metodolojisi çerçevesinde iş analizi ile veri analizi arasındaki ilişki ele alınıyor. Katılımcılar, iş analizinin veri analizi süreçleriyle nasıl bütünleştiğini ve bu entegrasyonun şirketlerin veri odaklı karar alma mekanizmalarını nasıl güçlendirdiğini öğreniyor. Gerçek iş senaryoları üzerinden gerçekleştirilen analizler sayesinde, teorik bilgilerin pratik uygulamalarla nasıl hayata geçirildiği deneyimleniyor.
+
+## RAG (Retrieval Augmented Generation) Yöntemiyle Veri Analizi
+
+Veri türleri günümüzde farklı formatlarda karşımıza çıkıyor. Bu bağlamda, eğitimde RAG (Retrieval Augmented Generation) yöntemi kullanılarak yapılandırılmış (tabular veriler), yarı yapılandırılmış (işlemsel veriler) ve yapılandırılmamış (metin, görsel, video ve ses) verilerin birlikte analiz edilmesi üzerine çalışmalar yapılıyor. Katılımcılar, bu yöntemle elde edilen verilerden içgörüler çıkarma ve raporlar üretme konusunda bilgi sahibi oluyor.
+
+## Makine Öğrenmesi ile Veri Analitiği
+
+Veri analizi süreçlerinin en önemli aşamalarından biri, makine öğrenmesi tekniklerinin doğru şekilde uygulanmasıdır. Eğitimde en sık kullanılan tahminleme (prediction) modelleri olan:
+
+- **Logistic Regression**
+- **Time Series**
+- **Random Forest**
+- **Linear Regression**
+- **K-Means Clustering**
+
+yöntemleri ele alınıyor. Bu modeller, veri analitiğinin farklı seviyeleri olan açıklayıcı (descriptive), tahminleyici (predictive), tanılayıcı (diagnostic) ve yönlendirici (prescriptive) analizlerde nasıl kullanıldığına dair detaylı örneklerle inceleniyor.
+
+## Veri İşleme ve Makine Öğrenimi Platformları
+
+Etkili bir veri analizi süreci, doğru veri işleme yöntemlerinin belirlenmesiyle başlar. Bu bağlamda, eğitimde Python ve SQL gibi temel programlama dilleri kullanılarak:
+
+- **Vector Embedding**
+- **Object Table**
+- **Relational ve NoSQL Veritabanları**
+
+üzerinde veri işleme süreçleri gerçekleştiriliyor. Dask ve Pandas gibi framework'ler ile veri dönüşüm (ETL: Extract, Transform, Load) işlemleri incelenirken, Scikit-learn ve Vertex AI gibi makine öğrenimi platformlarında veri analiz süreçlerinin nasıl optimize edilebileceği ele alınıyor.
+
+## AI Agent Framework'leri ile Akıllı Süreç Otomasyonu
+
+Yapay zeka destekli iş süreçlerinin en önemli bileşenlerinden biri de AI Agent framework'leridir. Eğitim kapsamında LangChain ve LangFlow gibi framework'ler kullanılarak akıllı süreç otomasyonu (intelligent process automation) gerçekleştirilmekte ve veriye dayalı karar destek sistemleri tasarlanmaktadır. Bu sistemler, şirketlerin iş süreçlerini optimize etmesine ve operasyonel verimliliği artırmasına yardımcı olmaktadır.
+
+## NLQ (Doğal Dil Sorgulama) ile SQL Gerektirmeyen Veri Analizi
+
+Veri analitiğini daha erişilebilir hale getiren en yenilikçi yaklaşımlardan biri doğal dil sorgulama (NLQ) yöntemleridir. Eğitimde, şirket verilerinin semantic knowledge graph'ler üzerinden hiçbir SQL ya da PL/SQL kodu yazılmadan nasıl sorgulanabileceği gösterilmektedir. Bu sayede, teknik bilgisi sınırlı olan kullanıcılar dahi karmaşık veri analizlerini kolayca gerçekleştirebilmektedir. Ayrıca, veri görselleştirme teknikleriyle verilerin etkili bir şekilde sunulması konuları da ele alınmaktadır.
+
+## Yeni Nesil İş Zekası (BI) Platformları
+
+Yapay zeka destekli veri analitiğinin en kritik aşamalarından biri de iş zekası platformlarıdır. Eğitimde, yeni nesil BI platformları üzerinden şirket hedefleriyle uyumlu raporlama ve veri analizi altyapılarının nasıl oluşturulabileceği uygulamalı olarak ele alınmaktadır. Bu sayede, karar alma süreçlerinde veri odaklı bir yaklaşımın benimsenmesi sağlanmaktadır.
+
+## API ve LLM Modelleri ile Entegrasyon
+
+Modern veri analizi süreçlerinde API'lar kritik bir rol oynamaktadır. Eğitim süresince, farklı iç ve dış sistemlerdeki verilerin API'lar aracılığıyla nasıl entegre edilebileceği ve LLM (Büyük Dil Modelleri) yapay zeka reasoning modellerinin nasıl çalıştığı konuları detaylı bir şekilde incelenmektedir. Katılımcılar, veri, bilgi ve içgörü yolculuğunun nasıl optimize edilebileceğini gözlemlemektedir.
+
+## Veri Güvenliği ve Etik Yaklaşımlar
+
+Yapay zeka tabanlı veri analizi süreçlerinde veri güvenliği büyük bir önem taşımaktadır. Eğitim boyunca, veri güvenliğini sağlamak için kullanılan teknikler, veri şifreleme yöntemleri ve etik yaklaşımlar ele alınmaktadır. Bu sayede, katılımcılar yapay zeka projelerinde güvenliği nasıl sağlayabileceklerini öğrenmektedir.
+
+## 3A Modeli: Algılama, Anlama, Anlamlandırma
+
+Eğitimde ele alınan en önemli yetkinlik setlerinden biri 3A Modelidir. Algılama, Anlama ve Anlamlandırma üzerine kurulu bu model, iş analistlerinin ve veri analistlerinin veriyi doğru yorumlama becerilerini geliştirmesine yardımcı olmaktadır. Eğitim süresince, bu üç aşamanın sanat, bilim ve felsefe perspektifinden nasıl desteklenebileceğine dair entelektüel paylaşımlar yapılmaktadır.
+
+---
+
+*Bu eğitim, yapay zeka destekli veri analizinin tüm boyutlarını kapsayarak, katılımcıları gelecekteki iş dünyasına hazırlamaktadır. Stratejik karar alma süreçlerinde veri odaklı yaklaşımların benimsenmesi, şirketlerin sürdürülebilir rekabet avantajı elde etmesinin anahtarıdır.*
