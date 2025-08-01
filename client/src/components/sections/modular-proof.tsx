@@ -10,8 +10,8 @@ export default function ModularProof() {
         </div>
 
         {/* Two Module Container */}
-        <div className="container mx-auto mb-16">
-          <div className="border border-gray-200 rounded-2xl p-4 bg-transparent max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="border border-gray-200 rounded-2xl p-4 bg-transparent">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               
               {/* Module 1 - Dark Theme */}
@@ -60,7 +60,8 @@ export default function ModularProof() {
         </div>
 
         {/* Data Privacy Module */}
-        <div className="max-w-4xl mx-auto -mt-4">
+        <div className="max-w-6xl mx-auto -mt-4">
+          <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-3xl p-12 text-center border border-gray-100 shadow-sm">
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
               Will I share my data with 3rd parties?
@@ -71,6 +72,7 @@ export default function ModularProof() {
                 <strong>Secure Data Privacy</strong>
               </span> — You keep your data locally and never share with third parties.
             </p>
+          </div>
           </div>
         </div>
       </div>
