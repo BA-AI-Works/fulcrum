@@ -188,7 +188,7 @@ export default function AILayers() {
                   {trainingItems[selectedLayer]?.map((training, index) => (
                     <div key={index} className="flex items-center space-x-4 bg-gray-50 rounded-lg p-4 border border-gray-100 flex-shrink-0">
                       <div className="w-16 h-12 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: '#7A0000' }}>
-                        <div className="text-green-400 text-sm font-mono font-bold">
+                        <div className="text-sm font-mono font-bold" style={{ color: '#E9D4D4' }}>
                           {trainingNumbers[selectedLayer]?.[index] || `0${index + 1}`}
                         </div>
                       </div>
