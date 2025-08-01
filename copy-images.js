@@ -3,30 +3,34 @@
 import fs from 'fs';
 import path from 'path';
 
-// Copy images from images/ to public/images/
+// Copy images from images/ to both public/images/ and dist/public/images/
 const sourceDir = 'images';
-const targetDir = 'public/images';
+const targetDirs = ['public/images', 'dist/public/images'];
 
-// Ensure target directory exists
-if (!fs.existsSync(targetDir)) {
-  fs.mkdirSync(targetDir, { recursive: true });
-}
+// Ensure target directories exist
+targetDirs.forEach(targetDir => {
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
+});
 
-// Copy all files from source to target
+// Copy all files from source to targets
 try {
   const files = fs.readdirSync(sourceDir);
   
   files.forEach(file => {
     const sourcePath = path.join(sourceDir, file);
-    const targetPath = path.join(targetDir, file);
     
     if (fs.statSync(sourcePath).isFile()) {
-      fs.copyFileSync(sourcePath, targetPath);
-      console.log(`Copied ${file} to public/images/`);
+      targetDirs.forEach(targetDir => {
+        const targetPath = path.join(targetDir, file);
+        fs.copyFileSync(sourcePath, targetPath);
+        console.log(`Copied ${file} to ${targetDir}/`);
+      });
     }
   });
   
-  console.log('✓ All images copied successfully');
+  console.log('✓ All images copied successfully to both directories');
 } catch (error) {
   console.error('Error copying images:', error);
   process.exit(1);
