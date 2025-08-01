@@ -15,7 +15,7 @@ export default function Footer() {
   };
 
   const openNewsletterForm = () => {
-    window.open('https://form567.typeform.com/to/HUWNUHXg', '_blank');
+    window.open('https://form.typeform.com/to/newsletter', '_blank');
   };
 
   return (

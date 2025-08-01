@@ -113,13 +113,6 @@ Preferred communication style: Simple, everyday language.
 3. **Static Assets**: Served by Express in production mode
 4. **Environment**: Production environment variables for database connection
 
-### Vercel Deployment Configuration
-- **vercel.json**: Custom configuration for proper asset handling and API routing
-- **Static Assets**: Images copied to `dist/public/images/` during build
-- **Articles**: Markdown articles copied to deployment environment via build script
-- **Serverless Functions**: Separate API endpoints in `/api/` directory for Vercel compatibility
-- **Build Process**: `build-articles.js` script ensures articles are available in production
-
 ### Development Workflow
 1. **Local Development**: Vite dev server with Express backend
 2. **Hot Reload**: Instant updates for both client and server code
@@ -131,14 +124,5 @@ Preferred communication style: Simple, everyday language.
 - **Environment Variables**: DATABASE_URL for database connection
 - **Build Commands**: Separate build and start scripts for production
 - **Static Serving**: Express serves built client files in production
-
-## Recent Changes (August 1, 2025)
-
-### Vercel Deployment Fixes
-- Fixed image asset loading by copying `images/` folder to `client/public/images/`
-- Created Vercel-compatible API endpoints in `/api/blog/` directory
-- Updated `vercel.json` with proper routing and build configuration
-- Added `build-articles.js` to copy markdown files during deployment
-- Resolved 404 errors for project-background.jpg and blog API endpoints
 
 The application follows modern best practices with type safety, component reusability, and clear separation of concerns. The architecture supports rapid development while maintaining production readiness through proper build processes and deployment strategies.
