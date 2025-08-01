@@ -10,8 +10,8 @@ export default function ModularProof() {
         </div>
 
         {/* Two Module Container */}
-        <div className="max-w-7xl mx-auto mb-16">
-          <div className="border border-gray-200 rounded-2xl p-4 bg-transparent">
+        <div className="container mx-auto mb-16">
+          <div className="border border-gray-200 rounded-2xl p-4 bg-transparent max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               
               {/* Module 1 - Dark Theme */}
