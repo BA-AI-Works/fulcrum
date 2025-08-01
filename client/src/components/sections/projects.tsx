@@ -278,7 +278,7 @@ export default function Projects() {
         <div className="text-center mt-12">
           <Link href="/projects">
             <Button className="bg-fulcrum-red hover:bg-fulcrum-red-light text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
-              see more projects
+              See More Projects
             </Button>
           </Link>
         </div>

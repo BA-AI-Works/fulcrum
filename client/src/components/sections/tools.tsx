@@ -6,25 +6,29 @@ const tools = [
     title: "AI Process Maturity Assessment",
     description: "Assesses the existing level of AI automation of business processes and identifies the gap between existing state and what is possible.",
     icon: TrendingUp,
-    bgColor: "bg-fulcrum-red"
+    bgColor: "bg-fulcrum-red",
+    link: null
   },
   {
     title: "AI Readiness Assessment",
     description: "Assesses functions and individuals to identify which functions are more ready in terms of capability and culture to use AI.",
     icon: Users,
-    bgColor: "bg-fulcrum-red"
+    bgColor: "bg-fulcrum-red",
+    link: null
   },
   {
     title: "POwerBA",
     description: "Crafting product requirements documents faster and better, from business needs to test scenarios.",
     icon: FileText,
-    bgColor: "bg-fulcrum-red"
+    bgColor: "bg-fulcrum-red",
+    link: "https://powerba.ai/"
   },
   {
     title: "AI Competency-based Assessment",
     description: "Evaluates employee competencies for AI roles and generates capability development reports tailored by role.",
     icon: Brain,
-    bgColor: "bg-fulcrum-red"
+    bgColor: "bg-fulcrum-red",
+    link: null
   }
 ];
 
@@ -42,10 +46,17 @@ export default function Tools() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {tools.map((tool, index) => {
             const IconComponent = tool.icon;
+            const handleClick = () => {
+              if (tool.link) {
+                window.open(tool.link, '_blank');
+              }
+            };
+            
             return (
               <Card 
                 key={index}
-                className="hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-fulcrum-red"
+                className={`hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-fulcrum-red ${tool.link ? 'cursor-pointer' : ''}`}
+                onClick={handleClick}
               >
                 <CardContent className="p-8">
                   <div className={`w-16 h-16 ${tool.bgColor} rounded-lg flex items-center justify-center mb-6`}>

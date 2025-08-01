@@ -15,7 +15,7 @@ export default function ModularProof() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               
               {/* Module 1 - Dark Theme */}
-              <div className="bg-gray-900 rounded-2xl p-8 relative overflow-hidden">
+              <div className="bg-gray-900 rounded-2xl p-8 relative overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
                 {/* Dot pattern background */}
                 <div className="absolute inset-0 opacity-30">
                   <div className="absolute inset-0" style={{
@@ -37,7 +37,7 @@ export default function ModularProof() {
               </div>
 
               {/* Module 2 - Dark Theme */}
-              <div className="bg-gray-900 rounded-2xl p-8 relative overflow-hidden">
+              <div className="bg-gray-900 rounded-2xl p-8 relative overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
                 {/* Dot pattern background */}
                 <div className="absolute inset-0 opacity-30">
                   <div className="absolute inset-0" style={{
@@ -62,7 +62,7 @@ export default function ModularProof() {
         </div>
 
         {/* Data Privacy Module */}
-        <div className="max-w-4xl mx-auto mt-4">
+        <div className="max-w-4xl mx-auto mt-2">
           <div className="bg-white rounded-3xl p-12 text-center border border-gray-100 shadow-sm">
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
               Will I share my data with 3rd parties?
