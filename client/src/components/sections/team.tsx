@@ -50,9 +50,9 @@ export default function Team() {
         <div className="max-w-6xl mx-auto rounded-2xl p-8" style={{ backgroundColor: 'rgb(249, 250, 251)' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
-              <div key={index} className="text-center group">
+              <div key={index} className="text-center group h-full">
                 <div 
-                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer h-full flex flex-col"
                   onClick={() => window.open(member.cv, '_blank')}
                 >
                   <div className="relative mb-6 mx-auto">
@@ -71,9 +71,13 @@ export default function Team() {
                       <Linkedin className="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-all duration-300" />
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold fulcrum-text mb-1">{member.name}</h3>
-                  <p className="fulcrum-red font-semibold mb-3 text-sm">{member.title}</p>
-                  <p className="text-gray-600 text-xs leading-relaxed">{member.bio}</p>
+                  <div className="flex-grow flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-lg font-bold fulcrum-text mb-1">{member.name}</h3>
+                      <p className="fulcrum-red font-semibold mb-3 text-sm">{member.title}</p>
+                    </div>
+                    <p className="text-gray-600 text-xs leading-relaxed">{member.bio}</p>
+                  </div>
                 </div>
               </div>
             ))}
